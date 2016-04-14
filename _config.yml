@@ -1,0 +1,27 @@
+######################
+# book (meta) info
+
+title: Azrieli Students On Software Modeling and Architecture
+author: 
+  name: robi-y
+
+github:
+  url: "https://github.com/jce-il/ASOSMA"
+
+
+########
+# more settings
+#baseurl: "/" 
+
+markdown: kramdown
+kramdown:
+  hard_wrap: false
+  input: GFM
+  syntax_highlighter: rouge
+  auto_ids: true # Auto-generate ID's for headings
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+include: [jekyll/]
