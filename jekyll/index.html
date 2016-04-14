@@ -1,0 +1,612 @@
+<h1 id="jekyll---a-simple-static-site-generator">Jekyll - A Simple Static Site Generator</h1>
+
+<p><img src="images/jekyll-sa-header.png" alt="Jekyll Logo" />
+<!-- --></p>
+
+<p><strong><a href="https://github.com/JoopAue">Joop Aué</a>, <a href="https://github.com/abouter">Anton Bouter</a>, and <a href="https://github.com/MartinRogalla">Martin Rogalla</a></strong><br />
+<em>Delft University of Technology</em></p>
+
+<p><strong>Abstract</strong></p>
+
+<p><em>The Delft Students on Software Architecture Jekyll chapter gives a concise well-structured overview of Jekyll’s Software Architecture by providing perspectives of the various aspects that are important to its development.
+The involved stakeholders and context view are used to fully explain the extent of Jekyll’s outside influence.
+This is followed by an in-depth developer’s perspective after which Jekyll’s variability and performance are analyzed.
+These insights will not only make it easier for people to join the community and contribute to the project, but will also give the Jekyll core team an outsider’s observation of Jekyll’s Software Architecture.</em></p>
+
+<p><strong>Table of Contents</strong></p>
+
+<ul>
+  <li><a href="#jekyll---a-simple-static-site-generator">Jekyll - A Simple Static Site Generator</a>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#stakeholder-analysis">Stakeholder Analysis</a>
+        <ul>
+          <li><a href="#types-of-stakeholders">Types of Stakeholders</a></li>
+          <li><a href="#powerinterest-grid">Power/Interest Grid</a></li>
+        </ul>
+      </li>
+      <li><a href="#placing-jekyll-into-context">Placing Jekyll into Context</a>
+        <ul>
+          <li><a href="#internal-systems">Internal Systems</a></li>
+          <li><a href="#external-systems">External Systems</a></li>
+          <li><a href="#classes-of-people">Classes of People</a></li>
+          <li><a href="#context-diagram">Context Diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#developers-perspective">Developer’s Perspective</a>
+        <ul>
+          <li><a href="#module-organization">Module Organization</a></li>
+          <li><a href="#common-processing">Common Processing</a></li>
+          <li><a href="#standardization-of-design">Standardization of Design</a></li>
+          <li><a href="#standardization-of-testing">Standardization of Testing</a></li>
+          <li><a href="#codeline-organization">Codeline Organization</a></li>
+        </ul>
+      </li>
+      <li><a href="#variability-in-jekyll">Variability in Jekyll</a>
+        <ul>
+          <li><a href="#identification">Identification</a>
+            <ul>
+              <li><a href="#main-features">Main Features</a></li>
+              <li><a href="#implementation-of-features">Implementation of Features</a></li>
+              <li><a href="#incompatibilities">Incompatibilities</a></li>
+              <li><a href="#consolidation">Consolidation</a></li>
+            </ul>
+          </li>
+          <li><a href="#variation-points">Variation Points</a>
+            <ul>
+              <li><a href="#implementation-of-variation-points">Implementation of Variation Points</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#improving-jekylls-performance">Improving Jekyll’s Performance</a>
+        <ul>
+          <li><a href="#task-structure">Task Structure</a></li>
+          <li><a href="#metrics">Metrics</a></li>
+          <li><a href="#parallelizability">Parallelizability</a>
+            <ul>
+              <li><a href="#stamp-coupling">Stamp Coupling</a></li>
+              <li><a href="#parallelizable-iterations">Parallelizable Iterations</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#conclusions-and-recommendations">Conclusions and Recommendations</a></li>
+      <li><a href="#jekyll-bibliography">Bibliography</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+<p>Jekyll is an open-source static site generator written in Ruby.
+Jekyll started as an initiative by <a href="https://github.com/mojombo">Tom Preston-Werner</a> as a self-hosted alternative to complicated engines like <a href="https://wordpress.org/">WordPress</a> and <a href="http://www.mephistoblog.com/">Mephisto</a>.
+Jekyll allows the use of versioning systems such as Git and generates a site statically, while giving all forms of customizations by integrating template engines.
+Using only static pages, Jekyll provides a very stable and maintainable platform for generation of sites, which only requires a simple HTTP web server.</p>
+
+<p>Since late 2012, Jekyll has been maintained by Parker Moore, who took over the Jekyll project due to a decline in its active development.
+Since then Jekyll has taken off and many new features have been added.
+It is currently a very active open source project, which handles pull requests daily.
+This makes Jekyll an excellent candidate for a Software Architecture analysis.</p>
+
+<p>Jekyll automates many small tasks, which would take lots of time to do manually.
+These tasks include pagination, syntax highlighting and making use of layouts.</p>
+
+<p>The generation of the static sites simplifies the software-stack required to operate a Jekyll site.
+This simplification brings lots of benefits, such as a stability and security.</p>
+
+<p>In this chapter insights regarding Jekyll’s Software Architecture are given.
+This makes it easier for new people to join the open source scene to contribute to the Jekyll project.
+Additionally this will also give the Jekyll core team an outsider’s view of their Software Architecture.</p>
+
+<h2 id="stakeholder-analysis">Stakeholder Analysis</h2>
+<p>In order to obtain a better overview of the individuals and groups that affect Jekyll it is useful to learn about the different stakeholders that are involved.
+The different <a href="#types-of-stakeholders">types of stakeholders</a> are categorized by their concerns and influence.
+Additionally the stakeholders differ largely in their interest in Jekyll and their power over the project.
+These different levels of <a href="#powerinterest-grid">interest and power</a> require a different approach of dealing with the stakeholders.</p>
+
+<h3 id="types-of-stakeholders">Types of Stakeholders</h3>
+<p>In their book, Rozanski and Woods<sup><a href="#jekyll-bibliography">[1]</a></sup> describe 11 types of stakeholders.
+However, this section only discusses 4 of them, which are believed to be relevant for Jekyll.
+One additional stakeholder, the community, is highly relevant for Jekyll and will therefore be included in the stakeholder analysis.
+For each stakeholder type a short description is given followed by a specification of the Jekyll stakeholders that fit that description.</p>
+
+<ul>
+  <li>
+    <p><strong>Communicators</strong>:
+ are the people that provide documentation for the users and administrators of the system.
+ Furthermore they may provide training for staff or the development team.
+ Often communicators promote the product by communicating the product’s key features and benefits to other stakeholders.</p>
+
+    <p>One of the more important communicators of the Jekyll project is <a href="https://github.com/troyswanson">Troy Swanson</a>.
+Troy Swanson organizes the <a href="http://goo.gl/CFmDH9">Town Hall Meetings</a> of Jekyll in which the core team describes the current state of Jekyll and reason regarding future developments.</p>
+
+    <p>When focusing on documentation, the task is spread throughout the Jekyll team and its community.
+Whenever new features are added, developers are required to supply tests and documentation of the feature.</p>
+  </li>
+  <li>
+    <p><strong>Developers</strong>:
+ are responsible for the implementation and deployment from the systems’ specification.
+ That is: design, code, test and accept.
+ Their concerns lie with the platform used, programming languages for writing code, tools used, dependencies needed, as well as the maintainability and flexibility of the system.</p>
+
+    <p>The most active and notable developers at this moment are: <a href="https://github.com/parkr">Parker Moore</a>, <a href="https://github.com/alfredxing">Alfred Xing</a>, <a href="https://github.com/mattr-">Matt Rogers</a>, <a href="https://github.com/envygeeks">Jordon Bedwell</a> and <a href="https://github.com/penibelst">Anatol Broder</a>.
+These developers create pull requests with new features or fixes, test their code and review other pull requests.
+It is important to note that these are not the only developers working on the Jekyll project.
+The full list of developers can be found on the <a href="https://github.com/jekyll/jekyll/graphs/contributors">contribution page</a> of the Jekyll project.</p>
+  </li>
+  <li>
+    <p><strong>Testers</strong>:
+ test the system to ensure that it works exactly the way it was intended to work.</p>
+
+    <p>In Jekyll automatic Continuous Integration testing is done by <a href="https://travis-ci.org/jekyll/jekyll/">TravisCI</a>.
+<a href="http://jekyllrb.com/docs/contributing/">Jekyll Contributing page</a> states the following: <em>“If you’re creating a small fix or patch to an existing feature, just a simple test will do”</em>.
+This means that every developer is also immediately involved as a tester.
+There are no additional testers assigned; all of the testing is done automatically by the test suite and indirectly by the community.</p>
+  </li>
+  <li>
+    <p><strong>Users</strong>:
+ define the system’s functionality and use it once it has been deployed.</p>
+
+    <p>There are two types of users for Jekyll:</p>
+
+    <ul>
+      <li>Users that create content which is to be processed by Jekyll.</li>
+      <li>Users that use Jekyll to generate static pages.</li>
+    </ul>
+
+    <p>The content-creators include developers, employees, authors and other people writing articles.
+These people often also use Jekyll as a generator, since they would like to preview their pages.
+However the people who use Jekyll purely as a generator extend this group.
+Think of larger organizations such as <a href="https://github.com/GSA/analytics.usa.gov">analytics.usa.gov</a>, <a href="https://developmentseed.org/blog/2013/10/24/its-called-jekyll/">healthcare.gov</a> and <a href="https://help.github.com/articles/using-jekyll-with-pages/">GitHub Pages</a>.</p>
+  </li>
+  <li>
+    <p><strong>Community</strong>:
+is concerned with its own involvement with the system and exploitation of its features.
+ The community is also involved with the creation of new features as often suggestions and recommendations are coming directly from the community.</p>
+
+    <p>The community stakeholder in case of Jekyll is a blend of the users and the developers.
+Although this stakeholder is a combination of two earlier defined stakeholders it is comprehensible to discuss the community as a separate stakeholder.</p>
+
+    <p>The community can influence Jekyll’s development by suggesting new features or reporting bugs using the <a href="https://github.com/jekyll/jekyll/issues">Jekyll issues</a>.
+Furthermore, the community can express their opinion by commenting on developments and ideas.</p>
+
+    <p>Jekyll’s community is essential to Jekyll’s success.
+Due to <a href="https://github.com/jekyll/jekyll-help">Jekyll’s help repository</a>, the community is self-supportive as there are people with a lot of knowledge regarding Jekyll who offer their expertise by answering questions asked by the community.
+Additional means of communications in the community are: IRC and <a href="http://stackoverflow.com/questions/tagged/jekyll">Stack Overflow</a>.</p>
+
+    <p>The Jekyll community benefits greatly from <a href="https://pages.github.com/">GitHub Pages</a> as GitHub Pages provides Jekyll <a href="https://help.github.com/articles/using-jekyll-with-pages/">support</a> as a blog-aware static site generator.</p>
+  </li>
+</ul>
+
+<h3 id="powerinterest-grid">Power/Interest Grid</h3>
+<p>The stakeholders can be prioritized using the Power/Interest Grid<sup><a href="#jekyll-bibliography">[2]</a></sup>.
+Stakeholders with high power and high interest must be involved in every decision and are to be satisfied.
+A low interest and high power stakeholder should be kept satisfied, but should not be bothered with detailed information.
+High interest and low power stakeholders need to be kept up-to-date with developments as they can be very helpful.
+Low interest and low power stakeholders should be monitored and not flooded with excessive communication.
+The Power/Interest Grid for the Jekyll project is displayed in <a href="#figure1">Figure 1</a>.</p>
+
+<p><a id="figure1"><img src="./images/power-interest-grid.png" alt="Figure 1: Power/Interest Grid" /></a>
+<strong>Figure 1</strong> - <em>Power/Interest Grid</em></p>
+
+<p>It is immediately clear that Parker Moore has great power and interest as he is the owner of the project.
+Furthermore it is interesting to note that GitHub has such high power.
+This is mainly because GitHub promotes Jekyll to be used with GitHub Pages and offers the feature to automatically build Jekyll sites.
+This gives GitHub a lot of influence on Jekyll.
+Besides GitHub’s power, it is also interesting to see that the <a href="https://github.com/jekyll/jekyll-help/">Jekyll-help</a> community has a relatively great power compared to the developers.</p>
+
+<h2 id="placing-jekyll-into-context">Placing Jekyll into Context</h2>
+<p>In order to show the context in which Jekyll resides, a clear concise description is given of the relationships, dependencies and interactions between Jekyll and its environment.
+The environment of a system include the people interacting with the system, dependencies and other interacting entities.</p>
+
+<p>In order to construct a context view for Jekyll its core requirements, as given in <a href="#main-features">Jekyll’s Features</a>, are to be combined with external entities.
+According to Rozanski and Woods<sup><a href="#jekyll-bibliography">[1]</a></sup> an external entity of a system is any system, organization, or person with which the system interacts.
+The relevant entities are grouped in three relevant categories: <a href="#internal-systems">Internal Systems</a>, <a href="#external-systems">External Systems</a> and <a href="#classes-of-people">Classes of People</a>.</p>
+
+<h3 id="internal-systems">Internal Systems</h3>
+<p>Internal systems that run within the Jekyll organization include:</p>
+
+<ul>
+  <li><strong>Jekyll-help</strong>: allows Jekyll users to ask questions and indirectly gives feedback to Jekyll itself.</li>
+  <li><strong>Jekyll-paginate</strong>: is used to paginate large quantities of content.</li>
+  <li><strong>Jekyll-coffeescript</strong>: is a <a href="http://www.coffeescript.org/">Coffeescript</a> converter for Jekyll, which allows users to write Coffeescript.</li>
+  <li><strong>Jekyll-gist</strong>: allows inclusion of <a href="https://gist.github.com/">Gists</a> in Jekyll websites.</li>
+  <li><strong>Jekyll-sass-convert</strong>: allows Jekyll to build <a href="http://sass-lang.com/">Sass and SCSS</a>.</li>
+  <li><strong>Jekyll-watch</strong>: features automatic rebuilding of a Jekyll site when file changes occur.</li>
+</ul>
+
+<h3 id="external-systems">External Systems</h3>
+<p>External systems that run outside of the Jekyll organization include:</p>
+
+<ul>
+  <li><strong>Dependencies</strong>: of which the most important dependencies include Ruby, RubyGems, Markup converters, testing frameworks, Rake and syntax highlighters.</li>
+  <li><strong>Plugins</strong>: provided by Jekyll include Generator, Converter, Filter, Tag, Collection and other plug-ins.
+ For a list of plugins consult the <a href="http://jekyllrb.com/docs/plugins/">plugin page</a>.</li>
+  <li><strong>Jekyll Offsprings</strong>: are systems based on Jekyll such as <a href="http://octopress.org/">Octopress</a>, <a href="http://hyde.github.io/">Hyde</a> and <a href="http://www.jekyllbootstrap.com/">Jekyll Bootstrap</a>.
+ These systems provide similar features and target the same audience.</li>
+  <li><strong>Version Control</strong>: which is facilitated by GitHub.</li>
+  <li><strong>Continuous Integration</strong>: is handled by <a href="https://travis-ci.org/">TravisCI</a> and creates a feedback-loop between the developers and the test-suite.</li>
+</ul>
+
+<h3 id="classes-of-people">Classes of People</h3>
+<p>There are several classes of people involved with Jekyll of which the relevant ones for the context view are listed below.</p>
+
+<ul>
+  <li><strong>Users</strong>: are the people that either use Jekyll indirectly as authors or are generators, which means they use Jekyll to generate static web pages.
+ Evidently a user can be both an author and generator.</li>
+  <li><strong>Developers</strong>: contribute to Jekyll by applying changes and creating pull requests.
+ The group of developers consists of Jekyll users and the core team that maintains Jekyll.</li>
+  <li><strong>Community</strong>: is the combination of the users and developers.
+Questions are asked and answered by the community.
+Furthermore, ideas for features and the future of Jekyll originate from the community.</li>
+</ul>
+
+<h3 id="context-diagram">Context Diagram</h3>
+<p>In the context diagram in <a href="#figure2">Figure 2</a>, a clear illustration is given of Jekyll’s capabilities and its interaction with external entities.
+It does not go into the system’s details in terms of how it should be built, but rather gives an abstract and high level view of the system.</p>
+
+<p><a id="figure2"><img src="./images/context-diagram.png" alt="Figure 2: Context Diagram" /></a>
+<strong>Figure 2</strong> - <em>Context Diagram</em></p>
+
+<h2 id="developers-perspective">Developer’s Perspective</h2>
+<p>A system from a user’s point of view often differs greatly from that of a developer.
+Both stakeholders, users and developers, have very different concerns and should therefore be dealt with differently.</p>
+
+<p>The following sections will each go into the development aspects of Jekyll that concern the developer, like its <a href="#module-organization">module organization</a> and <a href="#common-processing">common processes</a>.
+Attention is given to standardization in terms of <a href="#standardization-of-design">design</a>, <a href="#standardization-of-testing">testing</a>.
+Furthermore the <a href="#codeline-organization">organizational structure</a> of the code is discussed.</p>
+
+<h3 id="module-organization">Module Organization</h3>
+<p>In order to convey the general structure and organization of Jekyll’s source code, a module structure diagram is presented in <a href="#figure3">Figure 3</a>.
+The structure consists out of the following five layers ordered by abstractness in descending order:</p>
+
+<ol>
+  <li><strong>Presentation Layer</strong>: provides the final user experience.</li>
+  <li><strong>Application Layer</strong>: controls the data and provides services to various components in the system.</li>
+  <li><strong>Utility Layer</strong>: is used by every other layer and contains all shared services.</li>
+  <li><strong>Domain Layer</strong>: contains all the program’s logic, such as Draft, Layouts and Plugins.</li>
+  <li><strong>Data Access Layer</strong>: provides all the raw data. In this case folders from the disk.</li>
+</ol>
+
+<p>The rough dependencies between the different layers in the figure are denoted by arrows.</p>
+
+<p><a id="figure3"><img src="./images/structure-model.png" alt="Figure 3: Structure Model" /></a>
+<strong>Figure 3</strong> - <em>Structure Model</em></p>
+
+<h3 id="common-processing">Common Processing</h3>
+<p>According to Rozanski and Woods<sup><a href="#jekyll-bibliography">[1]</a></sup> any large system will benefit from identifying and isolating common processes into separate code modules that are used throughout the system.
+Jekyll has isolated common processing into separate code modules of which some are described below.</p>
+
+<ul>
+  <li>
+    <p><strong>Stevenson</strong>:
+ is named after the creator of the original <a href="http://en.wikipedia.org/wiki/Strange_Case_of_Dr_Jekyll_and_Mr_Hyde">Jekyll &amp; Hyde novel</a> and is used by Jekyll for logging.
+ It provides 4 levels of severity: <em>debug</em>, <em>info</em>, <em>warn</em> and <em>error</em>, and prints all messages in the console, unless the <code class="highlighter-rouge">-q</code> flag is used.
+ Its goal is to provide relevant information on the level of severity that is set.
+ New components should use this logger to log messages.</p>
+  </li>
+  <li>
+    <p><strong>Deprecator</strong>:
+ is used throughout the Jekyll code to notify the user of deprecated options and arguments.
+ These arguments were used in earlier versions of Jekyll, but have been replaced in later versions.</p>
+  </li>
+  <li>
+    <p><strong>Utils</strong>:
+ contains methods mainly for handling hashes as well as modifying strings.
+ It is a great example of common processing as for example the method <code class="highlighter-rouge">deep_merge_hashes</code> is used in over 10 source files.
+ If each of these files would include their own local implementation or a duplicate of the <code class="highlighter-rouge">deep_merge_hashes</code> functionality then changes in the implementation could result in bugs and a lot of work.</p>
+  </li>
+</ul>
+
+<h3 id="standardization-of-design">Standardization of Design</h3>
+<p>When a large team of developers is working on a project, it is important to set rules and guidelines.
+This is even more important in an open source project such as Jekyll, where literally everyone can contribute.
+Therefore a <a href="http://jekyllrb.com/docs/contributing/">list of guidelines</a> for contributing to Jekyll was created.
+This section will elaborate on the most important guidelines and summarize them.</p>
+
+<p>One very clear guideline is the use of <a href="https://github.com/styleguide/ruby">GitHub’s Ruby style guide</a>.
+This is an extensive guide that contains coding style rules regarding e.g. whitespace, naming and syntax.</p>
+
+<p>According to Jekyll’s guidelines a feature-contribution should contain one or more tests for this feature, depending on the complexity of the feature.
+Guidelines for tests are described in detail in the section <a href="#standardization-of-testing"><em>Standardization of Testing</em></a></p>
+
+<p>It is recommended to submit small pull requests, because this makes reviewing easier.
+Writing a description for the pull request and a motivation for the changes also helps and will reduce the time required to merge.</p>
+
+<p>Finally, a contribution that somehow changes the way Jekyll behaves, should also include an update to the <a href="http://jekyllrb.com/docs/home/">documentation</a>.
+Even though there is a separate repository for the Jekyll documentation, the guidelines state that any pull request that changes the documentation should be directed at the master branch.</p>
+
+<h3 id="standardization-of-testing">Standardization of Testing</h3>
+<p>Jekyll has standardized their way of testing.
+Contributors are <a href="http://jekyllrb.com/docs/contributing/">asked</a> to make tests when creating a small fix to an existing feature or creating a brand new one.
+Standardization of the way one should make a test is useful, because everyone involved will know what to do.
+The Jekyll test suite is making use of <a href="https://github.com/thoughtbot/shoulda/">Shoulda</a>, <a href="https://github.com/rspec/rspec">RSpec</a>, <a href="https://github.com/thoughtbot/shoulda/tree/master">Cucumber</a> and <a href="https://github.com/seattlerb/minitest">MiniTest</a>.</p>
+
+<p>Shoulda and MiniTest are used to make units tests, which reside in the <code class="highlighter-rouge">test</code> folder.
+RSpec is used to mock objects and supports stubs, fakes, spies and proxies.
+Cucumber is a tool for running tests written in a plain language, that can be read by anyone.
+These tests can be found in the <code class="highlighter-rouge">feature</code> folder.</p>
+
+<p>Jekyll is also using a continuous integration platform called <a href="https://travis-ci.org/jekyll/jekyll/">Travis CI</a>.
+The config file <code class="highlighter-rouge">.travis.yml</code> for Travis CI can be found in the root directory.
+This way every pull request will be automatically tested on all available tests.
+Travis CI will also check on code style with <a href="https://github.com/bbatsov/rubocop">Rubocop</a>.
+If a test fails or the code doesn’t satisfy the <a href="https://github.com/styleguide/ruby">GitHub style guide</a> for Ruby, the pull request will not be merged.</p>
+
+<h3 id="codeline-organization">Codeline Organization</h3>
+<p>A codeline is defined by Rozanski and Woods<sup><a href="#jekyll-bibliography">[1]</a></sup> as a particular version of a set of source code files with a well-defined organizational structure.
+This structure includes elements such as the directory structure, but also the utilities needed to test and release a build.
+Because the organization of the tests was already discussed in the section <a href="#standardization-of-testing"><em>Standardization of Testing</em></a>, this section will mainly describe the organization of the source files and how the project is built and released.</p>
+
+<p><a href="https://github.com/">GitHub</a> plays a major role in the codeline organization, as it gives contributors an easy way of accessing the code and also gives the owner an easy way of releasing it.
+The Jekyll project actually consists of multiple GitHub repositories.
+The main project is located in the <a href="https://github.com/jekyll/jekyll">Jekyll repository</a>, but entities such as the <a href="https://github.com/jekyll/jekyll-sitemap">sitemap plug-in</a>, the <a href="https://github.com/jekyll/classifier-reborn">general classifier module</a> and the <a href="https://github.com/jekyll/integration-tests">integration tests</a> have a separate repository.</p>
+
+<p>The directory structure of the main project is displayed in <a href="#figure4">Figure 4</a>.
+The contents of the most notable subdirectories are also shown in this diagram.
+The box of each subdirectory is connected to its parent directory by a line.
+The <em>lib</em> folder contains the main <em>jekyll.rb</em> file and the Jekyll folder where the rest of the source code is located.
+Additionally, it contains the files for the default site template in the <em>site_template</em> subdirectory.
+The 3 subdirectories of <em>lib/jekyll/</em>, <em>commands</em>, <em>converters</em> and <em>tags</em>, only contain up to 6 Ruby files each.
+However, the <em>lib/jekyll</em> folder also contains 35 Ruby files in the folder itself.
+This is a very large number of files for a single folder and these should preferably be placed in separate folders to maintain a clear and organized structure.
+One could for example place the files <em>site.rb</em>, <em>post.rb</em>, <em>page.rb</em> and <em>document.rb</em> in a new subdirectory <em>site</em> to organize the <em>lib/jekyll</em> folder.</p>
+
+<p><a id="figure4"><img src="./images/fileStructure.png" alt="Figure 4: Directory Structure" /></a>
+<strong>Figure 4</strong> - <em>Directory Structure</em></p>
+
+<p>Some other notable subdirectories are <em>features</em>, <em>script</em>, <em>site</em> and <em>test</em>.
+The <em>features</em> directory contains <em>.feature</em> files that are used by the <a href="https://cukes.info/">Cucumber</a> plugin, which lets developers describe the behavior of software in plain text.
+Scripts for e.g. building, testing and running plug-ins are located in the <em>scripts</em> subdirectory.
+Finally, the <em>site</em> directory contains all code for the <a href="http://jekyllrb.com/">Jekyll Site</a>
+and the <em>test</em> directory contains the files required for automated tests.</p>
+
+<p>Despite the large number of <a href="https://gemnasium.com/jekyll/jekyll">dependencies</a>, building Jekyll is very simple thanks to <a href="http://bundler.io/">Bundler</a>.
+When the dependencies of the project are specified in a gem file, Bundler ensures that all of these are present and up-to-date.
+This is done by simply calling <code class="highlighter-rouge">bundle install</code>.</p>
+
+<p>Releasing a new version of Jekyll was made very convenient by GitHub’s <a href="https://github.com/jekyll/jekyll/releases">release</a> feature.
+Whenever a build is released, a snapshot of the repository is taken and a version tag is attached.
+Anyone can then download this version of the product while the development of the product continues as usual.</p>
+
+<h2 id="variability-in-jekyll">Variability in Jekyll</h2>
+<p>The many features that Jekyll provides to the user result in an increasingly large variation in configurations.
+It is important to make sure that an overview of these variations is maintained such that special configuration cases do not result in system failures.
+In this chapter a focus is given on this variability looking from a <a href="http://www.sei.cmu.edu/productlines/">software product line perspective</a>.</p>
+
+<p>Firstly the various <a href="#identification">features</a> of Jekyll are identified and inter-feature incompatibilities are analyzed.
+Secondly the <a href="#variation-points">variation points</a> and their implementation are discussed.</p>
+
+<h3 id="identification">Identification</h3>
+<p>The <a href="#main-features">main features</a> of Jekyll are to be identified to determine the variation points in the system.
+The <a href="#incompatibilities">incompatibilities</a> among the features are constraints for Jekyll’s variability.</p>
+
+<h4 id="main-features">Main Features</h4>
+<p>The main feature of Jekyll is static site generation.
+This feature is primarily made possible by the features listed below.</p>
+
+<p><strong>Content</strong></p>
+
+<ul>
+  <li>Content can be written in <a href="http://daringfireball.net/projects/markdown/">Markdown</a> which is converted to HTML by using one of the following converters: <a href="http://dafoster.net/projects/rdiscount/">RDiscount</a>, <a href="http://kramdown.gettalong.org/">Kramdown</a>, <a href="https://github.com/vmg/redcarpet">Redcarpet</a> or <a href="https://github.com/bhollis/maruku">Maruku</a>.
+These converters have different advantages, e.g. LaTeX or <a href="https://help.github.com/articles/github-flavored-markdown/">GitHub Flavoured Markdown</a> support.</li>
+  <li>Content can be written in other languages, e.g. <a href="https://github.com/textile">Textile</a>, and can be converted using a custom converter plug-in.
+Writers can benefit from this as a certain file type may fit their needs better.</li>
+  <li>Static files are supported by Jekyll in case the user does not want to use templating for certain files.
+These static files can be mixed with files that are to be rendered.</li>
+  <li>Users can write drafts of posts that will reside in a special folder.
+This folder is not included during build unless specifically configured.</li>
+  <li>Users can write future posts which will not be displayed until the release time is reached.</li>
+  <li>To make custom data available to the renderer a user can include <a href="http://yaml.org/">YAML</a>, JSON and CSV files.</li>
+</ul>
+
+<p><strong>Commands</strong></p>
+
+<ul>
+  <li>Jekyll will only rebuild that part of the website that is changed when the <code class="highlighter-rouge">--watch</code> command is supplied.
+This allows for fast generation of the website by only regenerating the parts which are required.
+This creates a fast feedback loop if users want to, for example, adjust their theme and see the changes applied to their site.</li>
+  <li>Jekyll can be run in safe mode by supplying the <code class="highlighter-rouge">--safe</code> command.
+For security reasons, when GitHub Pages is used for building and deploying a Jekyll site, Jekyll is run with the <code class="highlighter-rouge">--safe</code> command at all times.</li>
+  <li>To allow users to run their own custom commands Jekyll allows plug-in commands to be used.</li>
+</ul>
+
+<p><strong>Styling</strong></p>
+
+<ul>
+  <li>Jekyll allows pages to be styled and to show content.
+This may include pagination of posts with a small excerpt of this post.</li>
+  <li>Jekyll provides highlighting for code snippets by supporting <a href="http://pygments.org/">Pygments</a> and <a href="https://github.com/jneen/rouge">Rouge</a> to be chosen.</li>
+  <li>To allow users to use <a href="http://coffeescript.org/">CoffeeScript</a> and <a href="http://sass-lang.com/">Sass</a> the so named assets are built into Jekyll.</li>
+</ul>
+
+<p><strong>Organizing</strong></p>
+
+<ul>
+  <li>Besides pages and posts users can also write their own custom type of collections, to allow for a more diverse site.</li>
+  <li>Pages that contain an overview of posts can be paginated.
+By doing this a user visiting the blog gets to see a clear view and can browse pages of posts.</li>
+  <li>To allow a better site navigation posts and pages can be accessed via permalinks, categories and/or tags supplied by the user building the site.</li>
+</ul>
+
+<h4 id="implementation-of-features">Implementation of Features</h4>
+<p>There is a tendency of first implementing features non-modularly.
+After some time the developers realize that it is probably better to modularize the feature and thus it becomes it’s own module.
+This holds especially for the earlier stages of Jekyll as can be seen with the <a href="https://github.com/jekyll/jekyll/issues/1240">related posts (LSI)</a> feature.
+First this feature is integrated into the Post class (see <a href="https://github.com/jekyll/jekyll/commit/c98911f">c98911f</a>), but later it was refactored into the <code class="highlighter-rouge">related-posts.rb</code> module (see <a href="https://github.com/jekyll/jekyll/commit/f67f7f3">f67f7f3</a>).
+Newer features such as <a href="https://github.com/jekyll/jekyll/pull/3116">incremental regeneration</a> are making use of pull requests and tend to be more modular before they are merged into the master branch.
+The collections feature is an exception to this rule, as it required many modifications throughout the entire codebase.</p>
+
+<h4 id="incompatibilities">Incompatibilities</h4>
+<p>As can be seen in the <a href="#main-features">main features</a> section, Jekyll offers a wide range of features.
+This results in the fact that there are many possible configurations.
+However, as will become clear, choosing a specific feature may limit the choices with regard to other features.
+Incompatibilities that can arise are listed and explained below.</p>
+
+<ul>
+  <li>
+    <p>The <code class="highlighter-rouge">--safe</code> flag for the command line or the <code class="highlighter-rouge">safe: true</code> flag for the configuration file makes Jekyll ignore plug-ins on build.
+The use for this has been explained in the <a href="#main-features">main features section</a>.
+This results in the fact that a custom converter cannot be used and that code written for a plug-in will not behave correctly.
+When a plug-in is used, it naturally follows that the safe option cannot be used.</p>
+  </li>
+  <li>
+    <p>When pagination is used the use of permalinks will break as can be found in the <a href="http://jekyllrb.com/docs/pagination/#enable-pagination">documentation</a>.
+The use of both of pagination and permalinks will therefore result in an incompatibility issue.
+There are several issues that are the result of this: <a href="https://github.com/jekyll/jekyll-paginate/issues/25">Jekyll-Paginate #25</a> and <a href="https://github.com/jekyll/jekyll/issues/1625">Jekyll #1625</a>.
+A solution has not been found yet, however an addition to the documentation was made to warn users of this problem in <a href="https://github.com/jekyll/jekyll/pull/3551">Jekyll #3551</a>.</p>
+  </li>
+</ul>
+
+<h4 id="consolidation">Consolidation</h4>
+<p>Jekyll’s features are consolidated in the feature model in <a href="#figure5">Figure 5</a>, which shows how the features are dependent on each other.
+This model was created using the <a href="http://wwwiti.cs.uni-magdeburg.de/iti_db/research/featureide/">Eclipse FeatureIDE plug-in</a>.
+The <a href="#incompatibilities">incompatibilities</a> described earlier resulted in the constraints that are shown below the diagram.
+Additional constraints are added and can be found as notes at the bottom of the figure.
+The first constraint is on permalinks.
+Permalinks should not exists without having a post or a page.
+The second constraint is that data should also have either a page, post or collection, since otherwise the data will never be used.
+Furthermore, formats like <em>LaTeX</em> and <em>Math symbols</em> require specific parsers to be used.</p>
+
+<p><a id="figure5"><img src="./images/featureDiagram.png" alt="Figure 5: Feature Diagram" /></a>
+<strong>Figure 5</strong> - <em>Feature Diagram</em></p>
+
+<h3 id="variation-points">Variation Points</h3>
+<p>The user can specify the configuration of the site build in a configuration file or with flags when executing Jekyll in the terminal.
+However, not all settings can be set via flags.
+All possible configurations can be described in the configuration file called  <code class="highlighter-rouge">_config.yml</code>.
+Jekyll always uses a default configuration and then overrides all settings provided by the configuration file.
+The flags set when running Jekyll override both the settings in the default configuration and the configuration file made by the user.</p>
+
+<p>The user can also use third-party plug-ins to alter the system, but without the need to modify the Jekyll source code.
+A plug-in can be used by placing it in the <code class="highlighter-rouge">_plugins</code> directory, by specifying the gems needed in the configuration file or by adding a little piece of code in the <code class="highlighter-rouge">Gemfile</code>.
+The three ways of installing a plug-in can be used simultaneously.</p>
+
+<h4 id="implementation-of-variation-points">Implementation of Variation Points</h4>
+<p>One important variation point in the Jekyll system is the way how it converts Markdown into HTML.
+In the configuration file the Markdown entry can be set to one of the following four converters: <code class="highlighter-rouge">RedCarpet</code>, <code class="highlighter-rouge">Kramdown</code>, <code class="highlighter-rouge">RDiscount</code> and <code class="highlighter-rouge">Maruku</code>.
+The <code class="highlighter-rouge">Markdown</code> class makes an instance of one of the four Markdown converters, which all implement the <code class="highlighter-rouge">convert(content)</code> method.
+In this way the rest of the system does not need to know which type or version of Markdown converter is used.
+This makes it easy to add support for new Markdown converters.
+This feature can be used by any blogger that would like to use certain features that are not available in all Markdown converters, such as the math symbols feature of Kramdown.</p>
+
+<p>Another variation point is the <code class="highlighter-rouge">--safe</code> function, which will disable the use of any plug-ins.
+This variability point is mostly useful for developers that do not trust external plug-ins with the contents of their website.
+The <code class="highlighter-rouge">--safe</code> feature resolves when the site is built.</p>
+
+<h2 id="improving-jekylls-performance">Improving Jekyll’s Performance</h2>
+<p>Performance is one of Jekyll’s development priorities.
+It has been a heavily recurring topic as can be seen in various issues (<a href="https://github.com/jekyll/jekyll/issues/3324">Jekyll #3324</a>, <a href="https://github.com/18F/hub/issues/169">18F #169</a>, <a href="https://github.com/jekyll/jekyll/issues/3365">Jekyll #3365</a> and <a href="https://github.com/jekyll/jekyll/issues/1140">Jekyll #1140</a>), the <a href="https://byparker.com/blog/2014/jekyll-3-the-road-ahead/">Jekyll 3 Roadmap</a> and the <a href="https://www.youtube.com/watch?v=sRCXRkUVAag">Jekyll Townhall (Status) Meetings</a>.
+These sources, especially the Jekyll 3 Roadmap, strongly influence the future development of Jekyll and therefore a performance analysis is definitely in place.
+Furthermore this section gives insights in the possibilities for performance improvements.</p>
+
+<p>Some of the performance issues were fixed with the <a href="https://github.com/jekyll/jekyll/pull/3116">incremental regeneration feature</a>.
+Further developing the incremental regeneration feature is one way of improving the performance.</p>
+
+<p>The Jekyll source contains <a href="https://github.com/jekyll/jekyll/tree/master/benchmark">benchmarks</a> relevant for small scale improvements, like whether to use <code class="highlighter-rouge">+=</code> or <code class="highlighter-rouge">&lt;&lt;</code> for string concatenation.
+Since the potential performance gain of the results of these benchmarks is very small these benchmarks will not be discussed.</p>
+
+<p>Another, more favorable, way is performing certain processes in parallel.
+However, many processes depend on other processes, which means that parallelization, in that case, is not possible.
+Therefore an analysis of Jekyll is performed to find processes that could potentially be run in parallel.
+This includes a <a href="#task-structure">task structure</a> that describes the tasks of Jekyll and their dependencies.
+By <a href="#metrics">applying metrics</a> to a Jekyll site the most influential sub processes can be found and elaborated on in terms of <a href="#parallelizability">parallelizability</a>.</p>
+
+<h3 id="task-structure">Task Structure</h3>
+<p>Building a site starts with the <code class="highlighter-rouge">command</code> class that calls the <code class="highlighter-rouge">site.process</code> method.
+This method calls the methods displayed in <a href="#figure6">Figure 6</a> subsequently:</p>
+
+<p><a id="figure6"><img src="images/processes.png" alt="Figure 6: Processes in Jekyll" /></a>
+<strong>Figure 6</strong> - <em>Processes in Jekyll</em></p>
+
+<h3 id="metrics">Metrics</h3>
+<p>By running a benchmark on the processes described by the <a href="#task-structure">task structure</a> a general idea of which processes are performance intensive is obtained.
+Analyzing the time spent on these different methods indicates that 97.5% of the build time is caused by the <code class="highlighter-rouge">render</code> method, as is displayed in <a href="#figure7">Figure 7</a>.
+The measurements have been performed on the <a href="http://jekyllrb.com/">Jekyll site</a>.</p>
+
+<p><a id="figure7"><img src="./images/measurements/1-site-process.png" alt="Diagram processes" /></a></p>
+
+<p><strong>Figure 7</strong> - <em>Time delay caused by the site processes</em></p>
+
+<p>In <a href="#figure8">Figure 8</a> the contribution in percentages of the total time spent by the renderer is displayed.
+The renderer uses around 20% of the time to render pages and posts.
+The other 80% is spent on rendering collections.
+Time spent on rendering permalinks is negligible compared to the rendering of pages, posts and collections.</p>
+
+<div id="figure8" />
+
+<p><img src="./images/measurements/2-render-process.png" alt="Diagram render" />
+<strong>Figure 8</strong> - <em>Time delay caused by render processes</em></p>
+
+<p>When investigated further, it is found that in the collection rendering process 67% of the time is used by the <code class="highlighter-rouge">place in layout</code> process as shown in <a href="#figure9a">Figure 9a</a>.
+Looking into that it is concluded that by far the most time can be gained by improving the rendering process that uses <a href="http://liquidmarkup.org/">Liquid</a>. 
+Especially the <code class="highlighter-rouge">place in layout</code> process.
+This fact is illustrated by <a href="#figure9b">Figure 9b</a>.</p>
+
+<div id="figure9a" />
+
+<p><img src="images/measurements/3-collection-render.png" alt="**Figure 9(a)** _Time delay caused by collection renderer processes_" />
+<strong>Figure 9(a)</strong> <em>Time delay caused by collection renderer processes</em></p>
+
+<div id="figure9b" />
+
+<p><img src="images/measurements/4-render-place.png" alt="**Figure 9(b)** - _Place in layout rendering processes_" />
+<strong>Figure 9(b)</strong> - <em>Place in layout rendering processes</em></p>
+
+<h3 id="parallelizability">Parallelizability</h3>
+<p>Improving the rendering performed by Liquid may not be straightforward, but executing parts of the render process in parallel is definitely a possibility.
+The current codebase however does not allow an easy way for identifying parallelizable processes as is discussed in the <a href="#stamp-coupling">section about stamp coupling</a>.
+Parallelizing loops is a way of increasing performance which suits Jekyll well and is therefore explained in the <a href="#parallelizable-iterations">last section</a>.</p>
+
+<h4 id="stamp-coupling">Stamp Coupling</h4>
+<p>Stamp coupling occurs when two processes communicate through a data structure that contains unnecessary information.
+In other words: information is passed from A to B that is not required by B.
+Two processes that were thought to be dependent could therefore turn out to be independent if they happen to have a high level of stamp coupling.
+In Jekyll’s case the <code class="highlighter-rouge">site</code> object is passed into the constructors of <code class="highlighter-rouge">post</code>, <code class="highlighter-rouge">page</code> and <code class="highlighter-rouge">renderer</code> even though only a selection of attributes and methods of the site class is used.
+Passing only the relevant attributes into constructors and methods will not only make the code clearer, it will also make it more obvious whether certain processes can be executed in parallel.</p>
+
+<h4 id="parallelizable-iterations">Parallelizable Iterations</h4>
+<p>Loops in which iterations do not depend on other iterations are perfect candidates for parallelization.
+There are multiple performance influential loops in Jekyll, which can be parallelized.
+For example the rendering of posts and pages:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>payload = site_payload
+[posts, pages].flatten.each do |page_or_post|
+    if regenerator.regenerate?(page_or_post)
+        page_or_post.render(layouts, payload)
+    end
+end
+</code></pre>
+</div>
+
+<p>It is worthwhile to take a look at these types of loops as the performance can be improved drastically by parallelization.</p>
+
+<h2 id="conclusions-and-recommendations">Conclusions and Recommendations</h2>
+<p>Throughout the analysis of Jekyll’s Software Architecture many observations have been made.
+First Jekyll’s large and complex network of stakeholders, which includes many internal and external entities was analyzed.
+The most important stakeholders identified are Parker Moore, the project’s lead maintainer, and GitHub, Jekyll’s largest user.</p>
+
+<p>The management of all these different stakeholder is reflected in Jekyll’s organization.
+As in any project with a large number of contributors with various backgrounds, it is important that the contributions are in some way standardized.
+This is exactly why Jekyll keeps a clear structure and enforces guidelines in order to maintain its quality in code, documentation and testing.</p>
+
+<p>The analysis of the variability in Jekyll has resulted in noting incompatibilities and has identified developer behavior when focusing on modularity.
+These observations can be used in future development to think about modularity in the beginning of the development rather than only striving for modularity during refactoring.</p>
+
+<p>Performance is one of Jekyll’s main focus points and the analysis provided shows that the highest performance impact is the result of the render process.
+As suggested in the analysis, parallelizability of the render process can dramatically improve performance.</p>
+
+<p>All in all, Jekyll is a very lively open source project that is well tested, well documented and clearly structured.
+Jekyll’s community has been warm and welcoming, providing beginning contributors with help and guidance.</p>
+
+<p><em>Are you new to the open source community or simply interested in contributing to Jekyll? 
+Have a look at <a href="https://github.com/jekyll/jekyll">Jekyll</a> and don’t be afraid to propose small changes as the Jekyll community will give you thorough feedback on your proposed contributions and will help you along your journey.</em></p>
+
+<div id="jekyll-bibliography" />
+
+<h2 id="bibliography">Bibliography</h2>
+<p><strong>[1]</strong> Nick Rozanski and Eoin Woods. 2011. Software Systems Architecture:
+Working with Stakeholders Using Viewpoints and Perspectives. Addison-Wesley
+Professional.</p>
+
+<p><strong>[2]</strong> Rachel Thompson. Stakeholder Analysis - Winning Support for Your Projects. <a href="http://www.mindtools.com/pages/article/newPPM_07.htm">http://www.mindtools.com/pages/article/newPPM_07.htm</a></p>
