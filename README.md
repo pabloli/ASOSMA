@@ -77,10 +77,10 @@ We would like to thank:
 ## Copyright and License
 
 The copyright of the chapters is with the authors of the chapters. All chapters are licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
-Reuse of the material is permitted, provided adequate attribution (such as a link to chapter on the [DESOSA book site][desosa]) is included.
+Reuse of the material is permitted, provided adequate attribution (such as a link to the chapter on the [book site][ASOSMA]) is included.
 
 
 [![Creative Commons](cc-by.png)][cc-by]
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
-[desosa]: http://delftswa.github.io/
+[ASOSMA]: https://github.com/jce-il/ASOSMA
