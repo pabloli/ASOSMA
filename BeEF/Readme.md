@@ -5,7 +5,7 @@
                 Ran Itzhaki ([ranitz](https://github.com/ranitz)), 
                 Itsik Rabinovitch ([itzikrb100](https://github.com/itsikrb100)), 
                 Rivka Gehler ([rivkage](https://github.com/rivkage)),
-                Mihal Seneor
+                Mihal Seneor ([michalseneor](https://github.com/michalseneor)),
 
 
 ## Introduction
