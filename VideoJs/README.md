@@ -9,7 +9,7 @@ Stage 0:
 1. Team members:
     - [Harel Wallach](https://github.com/harella1)
     - [Nati Ohayon](https://github.com/natiohayun)
-    - [Meir Zilcha](https://github.com/mwindowshz)
+    - [Meir Zilkha](https://github.com/mwindowshz)
     - [Pablo Liberman](https://github.com/pabloli)
     
 
