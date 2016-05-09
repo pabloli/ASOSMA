@@ -22,6 +22,14 @@ title: Azrieli Students On Software Modeling and Architecture
   * [Variability in Jekyll](jekyll/#variability-in-jekyll)
   * [Improving Jekyll's Performance](jekyll/#improving-jekylls-performance)
   * [Conclusions and Recommendations](jekyll/#conclusions-and-recommendations)
+* VIDEO.JS:
+  * Introduction
+  * Stakeholder Analysis
+  * HTML5
+  * Placing VIDEO.JS into Context
+  * SDK Overview
+  * Performance Analysis
+  * Conclusions and Recommendations
   
 ## Introduction
 
