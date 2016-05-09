@@ -22,7 +22,9 @@ title: Azrieli Students On Software Modeling and Architecture
   * [Variability in Jekyll](jekyll/#variability-in-jekyll)
   * [Improving Jekyll's Performance](jekyll/#improving-jekylls-performance)
   * [Conclusions and Recommendations](jekyll/#conclusions-and-recommendations)
-  
+* BeEF: [BeEF] (BeEF/)
+  * [Readme](BeEF/Readme.md)
+
 ## Introduction
 
 Azrieli Students On Software Modeling and Architecture is a collection of modeling and architectural descriptions of open source software systems written by students from Azrieli - Jerusalem College of Engineering during a master level [course][sw-modeling-2016b] taking place in 2016.
