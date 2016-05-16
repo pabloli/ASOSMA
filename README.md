@@ -22,8 +22,8 @@ title: Azrieli Students On Software Modeling and Architecture
   * [Variability in Jekyll](jekyll/#variability-in-jekyll)
   * [Improving Jekyll's Performance](jekyll/#improving-jekylls-performance)
   * [Conclusions and Recommendations](jekyll/#conclusions-and-recommendations)
-* OptiKey: [OptiKey](OptiKey/)
-  * [Readme](OptiKey/README.md)  
+* [Firefox-ios](firefox-ios):
+  * [Readme](firefox-ios/README.md)
 
 ## Introduction
 
