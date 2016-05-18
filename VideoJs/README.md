@@ -2,8 +2,8 @@
 title: VIDEO.JS
 permalink: /VIDEO.JS/
 ---
-
-# VIDEO.JS - HTML5 Video Player
+![Video.js logo](http://videojs.com/img/logo.png)
+# [Video.js - HTML5 Video Player](http://videojs.com)
 
 <!-- -->
 
