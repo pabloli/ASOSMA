@@ -1,4 +1,6 @@
 ---
+
+[![Join the chat at https://gitter.im/pabloli/ASOSMA](https://badges.gitter.im/pabloli/ASOSMA.svg)](https://gitter.im/pabloli/ASOSMA?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 title: Azrieli Students On Software Modeling and Architecture
 ---
 
