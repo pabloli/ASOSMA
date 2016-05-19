@@ -24,9 +24,16 @@ permalink: /VIDEO.JS/
 	  * Types of Stakeholders
 	    * Communicators
 	      * Developers
+	      	* Core
+	      	* Skin
+	      	* Plugins
 	      * Testers
+	      	* Unit test 
 	      * Users
+	      	* API 
 	    * Community
+	    	* GitHub Repository
+	    	* StackOverFlow Forum
 	*	Placing VIDEO.JS into Context
 	  * Classes of People
 	    * Users
