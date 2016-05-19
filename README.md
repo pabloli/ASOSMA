@@ -11,9 +11,23 @@ title: Azrieli Students On Software Modeling and Architecture
 
 [robi-y]: https://github.com/robi-y
 
-## Table of contents
+## Table of Contents
 
 * [Introduction](#Introduction)
+* OptiKey: [OptiKey](OptiKey/)
+  * [Readme](OptiKey/README.md)  
+* BeEF: [BeEF] (BeEF/)
+  * [Readme](BeEF/Readme.md)
+* [VIDEO.JS](VideoJs/README.md):
+  * Introduction
+  * Stakeholder Analysis
+  * HTML5
+  * Placing VIDEO.JS into Context
+  * SDK Overview
+  * Performance Analysis
+  * Conclusions and Recommendations
+* [Firefox-ios](firefox-ios):
+  * [Readme](firefox-ios/README.md)  
 * Sample: [Jekyll](jekyll/)
   * [Introduction](jekyll/#Introduction)
   * [Stakeholder Analysis](jekyll/#stakeholder-analysis)
@@ -22,15 +36,7 @@ title: Azrieli Students On Software Modeling and Architecture
   * [Variability in Jekyll](jekyll/#variability-in-jekyll)
   * [Improving Jekyll's Performance](jekyll/#improving-jekylls-performance)
   * [Conclusions and Recommendations](jekyll/#conclusions-and-recommendations)
-* VIDEO.JS:
-  * Introduction
-  * Stakeholder Analysis
-  * HTML5
-  * Placing VIDEO.JS into Context
-  * SDK Overview
-  * Performance Analysis
-  * Conclusions and Recommendations
-  
+
 ## Introduction
 
 Azrieli Students On Software Modeling and Architecture is a collection of modeling and architectural descriptions of open source software systems written by students from Azrieli - Jerusalem College of Engineering during a master level [course][sw-modeling-2016b] taking place in 2016.

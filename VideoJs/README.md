@@ -2,13 +2,15 @@
 title: VIDEO.JS
 permalink: /VIDEO.JS/
 ---
-
-# VIDEO.JS - HTML5 Video Player
+![Video.js logo](http://videojs.com/img/logo.png)
+# [Video.js - HTML5 Video Player](http://videojs.com)
 
 <!-- -->
 
 **[Harel](https://github.com/harella1), [Nati](https://github.com/natiohayun), [Meir](https://github.com/mwindowshz), and [Pablo](https://github.com/pabloli)**<br/>
 *Azriely Engeniring collage Jerusalem*
+
+[![Join the chat at https://gitter.im/pabloli/ASOSMA](https://badges.gitter.im/pabloli/ASOSMA.svg)](https://gitter.im/pabloli/ASOSMA?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 **Abstract**
 
@@ -22,9 +24,16 @@ permalink: /VIDEO.JS/
 	  * Types of Stakeholders
 	    * Communicators
 	      * Developers
+	      	* Core
+	      	* Skin
+	      	* Plugins
 	      * Testers
+	      	* Unit test 
 	      * Users
+	      	* API 
 	    * Community
+	    	* GitHub Repository
+	    	* StackOverFlow Forum
 	*	Placing VIDEO.JS into Context
 	  * Classes of People
 	    * Users
