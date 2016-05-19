@@ -1,15 +1,75 @@
+---
+title: VIDEO.JS
+permalink: /VIDEO.JS/
+---
+![Video.js logo](http://videojs.com/img/logo.png)
+# [Video.js - HTML5 Video Player](http://videojs.com)
 
-## Video.js - Class Project
+<!-- -->
 
-Stage 0:
+**[Harel](https://github.com/harella1), [Nati](https://github.com/natiohayun), [Meir](https://github.com/mwindowshz), and [Pablo](https://github.com/pabloli)**<br/>
+*Azriely Engeniring collage Jerusalem*
 
-1. Project name: 
-  - Video.js - HTML5 Video Player
-  - [Video.js Repository](https://github.com/videojs/video.js)
-1. Team members:
-    - [Harel Wallach](https://github.com/harella1)
-    - [Nati Ohayon](https://github.com/natiohayun)
-    - [Meir Zilcha](https://github.com/mwindowshz)
-    - [Pablo Liberman](https://github.com/pabloli)
-    
+[![Join the chat at https://gitter.im/pabloli/ASOSMA](https://badges.gitter.im/pabloli/ASOSMA.svg)](https://gitter.im/pabloli/ASOSMA?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+**Abstract**
+
+* To do write abstract *
+
+**Table of Contents**
+
+* [VIDEO.JS - HTML5 Video Player]()
+	*	Introduction
+	*	Stakeholder Analysis
+	  * Types of Stakeholders
+	    * Communicators
+	      * Developers
+	      	* Core
+	      	* Skin
+	      	* Plugins
+	      * Testers
+	      	* Unit test 
+	      * Users
+	      	* API 
+	    * Community
+	    	* GitHub Repository
+	    	* StackOverFlow Forum
+	*	Placing VIDEO.JS into Context
+	  * Classes of People
+	    * Users
+	    * Developer
+	    * Community
+    * Context Diagram
+	* Developer's Perspective
+    * Module Organization
+    * Common Processing
+  	* Standardization of Design
+	  * Standardization of Testing
+	  * Codeline Organization
+	  * Metrics
+	* Conclusions and Recommendations
+	* Bibliography
+        
+	##	Introduction
+	##	Stakeholder Analysis
+	### Types of Stakeholders
+	#### Communicators
+	      * Developers
+	      * Testers
+	      * Users
+	####  Community
+	##  Placing VIDEO.JS into Context
+  ### Classes of People
+	    * Users
+	    * Developer
+	    * Community
+  ### Context Diagram
+  ##  Developer's Perspective
+  ### Module Organization
+  ### Common Processing
+  ### Standardization of Design
+  ### Standardization of Testing
+  ### Codeline Organization
+  ### Metrics
+  ##  Conclusions and Recommendations
+  ##  Bibliography
