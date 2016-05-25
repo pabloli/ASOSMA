@@ -59,16 +59,18 @@ Modifications of the contents of the videojs/video.js repository are made on a c
 ####  Community
 - GitHub Repository
 	- Repository life activity
-	![Repository life activity](https://github.com/pabloli/ASOSMA/blob/master/VideoJs/CommitFreq.png)
+	![Repository life activity](CommitFreq.png)
 	- Most active contributors                                             
-	![Most active contributors](https://github.com/pabloli/ASOSMA/blob/master/VideoJs/MostCommiters.png)
+	![Most active contributors](MostCommiters.png)
 - StackOverFlow Forum, is used for questions. All watchers will get emails for closed question responses.
 	- Question answering guide:                                       
-![Question Guide](https://github.com/pabloli/ASOSMA/blob/master/VideoJs/QuestionFlowChart.png)
+![Question Guide](QuestionFlowChart.png)
 
 ### Context Diagram
 ##  Developer's Perspective
 ### Module Organization
+####  Class Diagram
+![Class Diagram](VideoJs.png)
 ### Common Processing
 #### Change log file
 Each version (stable or beta) has a text file with the changes of the version.
