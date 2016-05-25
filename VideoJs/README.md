@@ -50,6 +50,7 @@ permalink: /VIDEO.JS/
 	* Bibliography
         
 	##	Introduction
+Video.js is a web video player built from the ground up for an HTML5 world. It supports HTML5 and Flash video, as well as YouTube and Vimeo (through plugins). It supports video playback on desktops and mobile devices. This project was started mid 2010, and the player is now used on over 200,000 websites
 	##	Stakeholder Analysis
 	### Types of Stakeholders
 	#### Communicators
@@ -74,7 +75,7 @@ permalink: /VIDEO.JS/
 	###### Users
 		* API 
 		* Known Users
-	      		* Zencoder
+		*  Zencoder
 				Zencoder is the creator of an open-source HTML5 video player, Video.js, built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
 	####  Community
 	    	* GitHub Repository
