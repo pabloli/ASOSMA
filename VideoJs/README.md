@@ -212,5 +212,5 @@ This file can includes:
 * http://html5video.org/wiki/Video_for_Everybody_HTML5_Video_Player
 
 ## Tools 
-[PlantUml UML Generator](http://plantuml.com/)
-[RawGit serves raw files directly from GitHub](http://rawgit.com/)
+* [PlantUml UML Generator](http://plantuml.com/)
+* [RawGit serves raw files directly from GitHub](http://rawgit.com/)
