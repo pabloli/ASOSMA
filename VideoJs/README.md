@@ -30,48 +30,25 @@ Video.js is a web video player built from the ground up for an HTML5 world. It s
 Using Video for Everybody as the embed code means you know it’s compatible with many devices (including ones without javascript).
 The javascript library fixes browser & device bugs, and makes sure your video is even more compatible across different browser versions.
 The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and easy custom skinning if you want to give it a specific look, or brand it with your own colors. See the skins page for examples of custom skins.
-Free & Open Source
-Lightweight. NO IMAGES USED
-100% skinnable using CSS
-Library independent
-Easy to use
-Easy to understand & extend
-Consistent look between browsers
-Full Screen & Full Window Modes
-Volume Control
-Forced fallback to Flash (even when there is an unsupported source)
 
-##	Stakeholder Analysis
-### Types of Stakeholders
-#### Communicators
-##### Developers
-###### TC Commitee
-The Video.js project is jointly governed by a Technical Steering Committee (TSC) which is responsible for high-level guidance of the project.
-The TSC has final authority over this project including:
+ 
+ - Free & Open Source
+ - Lightweight. NO IMAGES USED
+ - 100% skinnable using CSS
+ - Library independent
+ - Easy to use
+ - Easy to understand & extend
+ - Consistent look between browsers
+ - Full Screen & Full Window Modes
+ - Volume Control
+ - Forced fallback to Flash (even when there is an unsupported source)
 
- - Technical direction
- - Project governance and process (including this policy)
- - Contribution policy
- - GitHub repository hosting
- - Conduct guidelines
- - Maintaining the list of additional collaborators
+##**Stakeholder Analysis**
+###***Communicators***
 
-###### Collaborators
-Modifications of the contents of the videojs/video.js repository are made on a collaborative basis. Anybody with a GitHub account may propose a modification via pull request and it will be considered by the project Collaborators. All pull requests must be reviewed and accepted by a Collaborator with sufficient expertise who is able to take full responsibility for the change
-	
-##### Developing Modules
-- Core
-- Skin
-- Plugins
-
-#### Testers
-- Unit test
-
-##### Users
-######API
-
- - Player UI Features
- - 
+###***API***
+ - *Player UI Features*
+  
 	**Feature**|**Included**
 ---|:---:
 Audio Player|No
@@ -84,8 +61,7 @@ Themeable|Yes
 Advertising|No
 Analytics|No
 
-
- - Platform Compatibility
+ - *Platform Compatibility*
 
 	**OS**|**Support**
 ---|:---:
@@ -94,9 +70,8 @@ Android 1.x|Yes
 Android 2.x|Yes
 Blackberry|Yes
 
+ - *Embed Types Supported*
 
- - Embed Types Supported
-	
 	**Type**|**Support**
 ---|:---:
 Flash Fallback|Yes
@@ -106,7 +81,7 @@ Reads HTML5 Media Tags|Yes
 iFrame Embedding|No
 iFrame API|No
 
- -  API Compatibility
+ -  *API Compatibility*
 
 	**API**|Compatible
 ---|:---:
@@ -114,23 +89,26 @@ Flexible Embedding	|No
 HTML5 Media Events|No
 HTML5 Media API|No
 
+###***Users***
 
-######Known Users
+####Known Users
+ - ***Zencoder*** -- is the creator of an open-source HTML5 video player, Video.js, built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
 
- - Zencoder -- is the creator of an open-source HTML5 video player, Video.js, built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
+##**Community**
+- ***GitHub Repository***
 
-####  Community
-- GitHub Repository
-	- Repository life activity
+	*Repository life activity*
 	![Repository life activity](CommitFreq.png)
-	- Most active contributors                                             
+
+	*Most active contributors*                                             
 	![Most active contributors](MostCommiters.png)
-- StackOverFlow Forum, is used for questions. All watchers will get emails for closed question responses.
-	- Question answering guide:                                       
+- ***StackOverFlow Forum***
+ This forum is used for questions. All watchers will get emails for closed question responses.
+	
+	*Question answering guide:*                                       
 ![Question Guide](QuestionFlowChart.png)
 
-### Context Diagram
-## Development Process
+##**Development Process**
 There is no too much information about the process but from the github record we can learn that the project start with only one developer  and now the project is been developed by a lot of active developers.
 The bigger part of this project is the UI part.
 
@@ -141,7 +119,6 @@ VideoJS is an HTML5 Video Player with 3 core parts:
  - Pure HTML/CSS skin (video-js.css).
 
 The Javascript library (video.js) section is divided in 7 principal sections:
-
  - Control-Bar -- All the types of controls (i.e. Audio, Progress, Volume)
  - Menu -- All the menu components (i.e Buttons, Items)
  - Popup -- The Popup component is used to build pop up controls
@@ -150,7 +127,7 @@ The Javascript library (video.js) section is divided in 7 principal sections:
  - Tracks -- Setup the common parts of an audio, video, or text track
  - Utils -- Various utilities
 
-###Source code example
+###***Source code example***
 HTML 5
 ```
 <h1>Responsive Video.js Example (v4.3)</h1>
@@ -180,13 +157,45 @@ videojs.autoSetup();
       window.onresize = resizeVideoJS; 
     });
 ```
-##  Developer's Perspective
-### Module Organization
+##**Developer's Perspective**
+###***Developer Types***
+#### TC Commitee
+The Video.js project is jointly governed by a Technical Steering Committee (TSC) which is responsible for high-level guidance of the project.
+The TSC has final authority over this project including:
+
+ - Technical direction
+ - Project governance and process (including this policy)
+ - Contribution policy
+ - GitHub repository hosting
+ - Conduct guidelines
+ - Maintaining the list of additional collaborators
+
+#### Collaborators
+Modifications of the contents of the videojs/video.js repository are made on a collaborative basis. Anybody with a GitHub account may propose a modification via pull request and it will be considered by the project Collaborators. All pull requests must be reviewed and accepted by a Collaborator with sufficient expertise who is able to take full responsibility for the change
+	
+### ***Developing Modules***
+- Core
+- Skin
+- Plugins
+
+### ***Testers***
+- Unit test
+
+###***Module Organization***
 #### Module Analysis
 
 ####  Class Diagram
-![Class Diagram](VideoJs.png)
-### Common Processing
+####***All Project Classes***
+
+![Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/VideoJs.png)
+
+####***Component Class***
+
+![Component and inherited Classes Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/ComponentClass.svg)
+####***EventTrigger Class***
+
+![EventTrigger and inherited Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/EventTriggerClass.svg)
+###***Common Processing***
 #### Change log file
 Each version (stable or beta) has a text file with the changes of the version.
 This file can includes:
@@ -197,12 +206,10 @@ This file can includes:
  - API changes
  - Additional notes
 
-### Standardization of Design
-### Standardization of Testing
-### Codeline Organization
-### Metrics
 ##  Conclusions and Recommendations
 ##  Bibliography
 * https://github.com/videojs/video.js
+* http://html5video.org/wiki/Video_for_Everybody_HTML5_Video_Player
 
-
+## Tools 
+[PlantUml UML Generator](http://plantuml.com/)
