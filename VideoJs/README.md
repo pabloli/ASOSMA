@@ -213,3 +213,4 @@ This file can includes:
 
 ## Tools 
 [PlantUml UML Generator](http://plantuml.com/)
+[RawGit serves raw files directly from GitHub](http://rawgit.com/)
