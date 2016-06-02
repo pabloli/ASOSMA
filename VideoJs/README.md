@@ -92,10 +92,23 @@ HTML5 Media API|No
 
 ###***Users***
 
-####Known Users
- - ***Zencoder*** -- is the creator of Video.js 
+####***Known Users***
+
+***Funny Or Die***
+![FunnyOrDie](https://yt3.ggpht.com/-hBhdcAb62Uo/AAAAAAAAAAI/AAAAAAAAAAA/NUpkCfVpTIU/s100-c-k-no-rj-c0xffffff/photo.jpg)
+
+***The Guardian***
+![](https://assets.guim.co.uk/images/favicons/451963ac2e23633472bf48e2856d3f04/152x152.png)
+
+***Onion Studios***
+![](http://assets3.onionstatic.com/onionstatic/onionstudios/static/core/images/os_logo.png)
+ 
+  ***Zencoder*** -- is the creator of Video.js
+![](https://a.zencdn.net/assets/logo-print-c8eb6ccdba8286b7c36e567b2527f3bc.png)
+
+
  - כל התיאור כאן בהמשך לא שייך זה לא מתאר את המשתמש, וגם נראה  שלא שואלים כאן מי יצר את התוכנה, אלה המשתמשים, כלומר אתרים ידועים,  וצריך להביא אותם כדוגמא.
-- which is  open-source project.  Video.js is  built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
+ -  which is  open-source project.  Video.js is  built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
 
 ##**Community**
 - ***GitHub Repository***
@@ -190,7 +203,7 @@ Modifications of the contents of the videojs/video.js repository are made on a c
 ####  Class Diagram
 ####***All Project Classes***
 
-![Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/VideoJs.png)
+![Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/vj.svg)
 
 ####***Component Class***
 
@@ -217,3 +230,5 @@ This file can includes:
 ## Tools 
 * [PlantUml UML Generator](http://plantuml.com/)
 * [RawGit serves raw files directly from GitHub](http://rawgit.com/)
+* [Generate a class diagram for your node.js web application] (https://github.com/bakunin95/wavi)
+*
