@@ -27,11 +27,11 @@ Is a active project.
 ##	Introduction
 Video.js is a web video player built from the ground up for an HTML5 world. It supports HTML5 and Flash video, as well as YouTube and Vimeo (through plugins). It supports video playback on desktops and mobile devices. This project was started mid 2010, and the player is now used on over 200,000 websites
 
-Using Video for Everybody as the embed code means you know it’s compatible with many devices (including ones without javascript).
-The javascript library fixes browser & device bugs, and makes sure your video is even more compatible across different browser versions.
-The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and easy custom skinning if you want to give it a specific look, or brand it with your own colors. See the skins page for examples of custom skins.
+Video.JS is compatible with may Browsers and Devices, thus makes it available on many platforms  (including ones without java script).  This is achieved through  the  use of embedded code.
+The java script library fixes browser & device bugs, and makes sure your video is even more compatible across different browser versions.
+The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and easy custom skinning if you want to give it a specific look, or brand it with your own colors. 
 
- 
+ **The Advantages :**
  - Free & Open Source
  - Lightweight. NO IMAGES USED
  - 100% skinnable using CSS
@@ -46,7 +46,7 @@ The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and ea
 ##**Stakeholder Analysis**
 ###***Communicators***
 
-###***API***
+###***?????***
  - *Player UI Features*
   
 	**Feature**|**Included**
@@ -65,10 +65,11 @@ Analytics|No
 
 	**OS**|**Support**
 ---|:---:
+Windows|Yes
 iOS|Yes
-Android 1.x|Yes
-Android 2.x|Yes
+Android |Yes
 Blackberry|Yes
+
 
  - *Embed Types Supported*
 
@@ -83,7 +84,7 @@ iFrame API|No
 
  -  *API Compatibility*
 
-	**API**|Compatible
+	**API**|Compatible --- ??? what dows this mean, 
 ---|:---:
 Flexible Embedding	|No
 HTML5 Media Events|No
@@ -92,7 +93,9 @@ HTML5 Media API|No
 ###***Users***
 
 ####Known Users
- - ***Zencoder*** -- is the creator of an open-source HTML5 video player, Video.js, built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
+ - ***Zencoder*** -- is the creator of Video.js 
+ - כל התיאור כאן בהמשך לא שייך זה לא מתאר את המשתמש, וגם נראה  שלא שואלים כאן מי יצר את התוכנה, אלה המשתמשים, כלומר אתרים ידועים,  וצריך להביא אותם כדוגמא.
+- which is  open-source project.  Video.js is  built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
 
 ##**Community**
 - ***GitHub Repository***
