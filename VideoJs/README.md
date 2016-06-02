@@ -46,7 +46,7 @@ The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and ea
 ##**Stakeholder Analysis**
 ###***Communicators***
 
-###***API***
+###***?????***
  - *Player UI Features*
   
 	**Feature**|**Included**
@@ -65,10 +65,11 @@ Analytics|No
 
 	**OS**|**Support**
 ---|:---:
+Windows|Yes
 iOS|Yes
-Android 1.x|Yes
-Android 2.x|Yes
+Android |Yes
 Blackberry|Yes
+
 
  - *Embed Types Supported*
 
@@ -83,7 +84,7 @@ iFrame API|No
 
  -  *API Compatibility*
 
-	**API**|Compatible
+	**API**|Compatible --- ??? what dows this mean, 
 ---|:---:
 Flexible Embedding	|No
 HTML5 Media Events|No
@@ -92,7 +93,9 @@ HTML5 Media API|No
 ###***Users***
 
 ####Known Users
- - ***Zencoder*** -- is the creator of an open-source HTML5 video player, Video.js, built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
+ - ***Zencoder*** -- is the creator of Video.js 
+ - כל התיאור כאן בהמשך לא שייך זה לא מתאר את המשתמש, וגם נראה  שלא שואלים כאן מי יצר את התוכנה, אלה המשתמשים, כלומר אתרים ידועים,  וצריך להביא אותם כדוגמא.
+- which is  open-source project.  Video.js is  built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
 
 ##**Community**
 - ***GitHub Repository***
