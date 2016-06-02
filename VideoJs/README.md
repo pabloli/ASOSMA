@@ -27,11 +27,11 @@ Is a active project.
 ##	Introduction
 Video.js is a web video player built from the ground up for an HTML5 world. It supports HTML5 and Flash video, as well as YouTube and Vimeo (through plugins). It supports video playback on desktops and mobile devices. This project was started mid 2010, and the player is now used on over 200,000 websites
 
-Using Video for Everybody as the embed code means you know it’s compatible with many devices (including ones without javascript).
-The javascript library fixes browser & device bugs, and makes sure your video is even more compatible across different browser versions.
-The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and easy custom skinning if you want to give it a specific look, or brand it with your own colors. See the skins page for examples of custom skins.
+Video.JS is compatible with may Browsers and Devices, thus makes it available on many platforms  (including ones without java script).  This is achieved through  the  use of embedded code.
+The java script library fixes browser & device bugs, and makes sure your video is even more compatible across different browser versions.
+The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and easy custom skinning if you want to give it a specific look, or brand it with your own colors. 
 
- 
+ **The Advantages :**
  - Free & Open Source
  - Lightweight. NO IMAGES USED
  - 100% skinnable using CSS
