@@ -18,14 +18,8 @@ title: Azrieli Students On Software Modeling and Architecture
   * [Readme](OptiKey/README.md)  
 * BeEF: [BeEF] (BeEF/)
   * [Readme](BeEF/Readme.md)
-* [VIDEO.JS](VideoJs/README.md):
-  * Introduction
-  * Stakeholder Analysis
-  * HTML5
-  * Placing VIDEO.JS into Context
-  * SDK Overview
-  * Performance Analysis
-  * Conclusions and Recommendations
+* Video.JS: [Video.JS](VideoJs/):
+  * [Readme](VideoJs/README.md)
 * [Firefox-ios](firefox-ios):
   * [Readme](firefox-ios/README.md)  
 * Sample: [Jekyll](jekyll/)
