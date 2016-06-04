@@ -34,16 +34,16 @@ The java script library fixes browser & device bugs, and makes sure your video i
 The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and easy custom skinning if you want to give it a specific look, or brand it with your own colors. 
 
  **The Advantages :**
- - Free & Open Source
- - Lightweight. NO IMAGES USED
- - 100% skinnable using CSS
- - Library independent
- - Easy to use
- - Easy to understand & extend
- - Consistent look between browsers
- - Full Screen & Full Window Modes
- - Volume Control
- - Forced fallback to Flash (even when there is an unsupported source)
+ - [x] Free & Open Source
+ - [x] Lightweight. NO IMAGES USED
+ - [x] 100% skinnable using CSS
+ - [x] Library independent
+ - [x] Easy to use
+ - [x] Easy to understand & extend
+ - [x] Consistent look between browsers
+ - [x] Full Screen & Full Window Modes
+ - [x] Volume Control
+ - [x] Forced fallback to Flash (*even when there is an unsupported source*)
 
 ##**Stakeholder Analysis**
 ###***Users***
@@ -57,15 +57,10 @@ The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and ea
 ***Onion Studios***
 ![](http://assets3.onionstatic.com/onionstatic/onionstudios/static/core/images/os_logo.png)
  
-  ***Zencoder*** -- is the creator of Video.js
+  ***Zencoder*** - Also is the creator of Video.js
 ![](https://a.zencdn.net/assets/logo-print-c8eb6ccdba8286b7c36e567b2527f3bc.png)
 
-
- - כל התיאור כאן בהמשך לא שייך זה לא מתאר את המשתמש, וגם נראה  שלא שואלים כאן מי יצר את התוכנה, אלה המשתמשים, כלומר אתרים ידועים,  וצריך להביא אותם כדוגמא.
- -  which is  open-source project.  Video.js is  built with Javascript, HTML, and CSS. Video.js plays video via native playback in all HTML5 browsers and devices, or through Adobe Flash when HTML5 playback is not available. 
-
-
-## ***How to use Video.JS ***
+## ***How to use Video.JS***
 
 ***Compatible Software***
 
@@ -136,7 +131,7 @@ videojs.autoSetup();
  
 
  - ***Video.Js Blog***
-This blog (managed by [Steve Heffernan](https://github.com/heff)) publishes the latest news about the projects, like anounces for a new version.
+This [blog](http://blog.videojs.com/) (managed by [Steve Heffernan](https://github.com/heff)) publishes the latest news about the projects, like anounces for a new version.
 
 *Question answering guide:*                                       
 ![Question Guide](QuestionFlowChart.png)
@@ -182,23 +177,9 @@ _The checklist_:
    
 ##***Module Organization***
 ###**Development Process**
-There is no too much information about the process but from the github record we can learn that the project start with only one developer  and now the project is been developed by a lot of active developers.
+There is no too much information about the process but from the github record we can learn that the project start with only one developer and now the project is been developed by a lot of active developers.
 The bigger part of this project is the UI part.
 
-VideoJS is an HTML5 Video Player with 3 core parts:
-
- - An embed code (Video for Everybody),
- - Javascript library (video.js)
- - Pure HTML/CSS skin (video-js.css).
-
-The Javascript library (video.js) section is divided in 7 principal sections:
- - Control-Bar -- All the types of controls (i.e. Audio, Progress, Volume)
- - Menu -- All the menu components (i.e Buttons, Items)
- - Popup -- The Popup component is used to build pop up controls
- - Slider -- The base functionality for sliders like the volume bar and seek bar
- - Tech -- Module for media (HTML5 Video, Flash) controllers
- - Tracks -- Setup the common parts of an audio, video, or text track
- - Utils -- Various utilities
 
 ####  ***Class Diagrams***
 ***Entire Project Diagram*** -- Made with WAVI
@@ -212,6 +193,19 @@ The Javascript library (video.js) section is divided in 7 principal sections:
 ![EventTrigger and inherited Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/EventTriggerClass.svg)
 
 ###**Metric Code**
+The Javascript library (video.js) section is divided in 7 principal sections:
+ - Control-Bar -- All the types of controls (i.e. Audio, Progress, Volume)
+ - Menu -- All the menu components (i.e Buttons, Items)
+ - Popup -- The Popup component is used to build pop up controls
+ - Slider -- The base functionality for sliders like the volume bar and seek bar
+ - Tech -- Module for media (HTML5 Video, Flash) controllers
+ - Tracks -- Setup the common parts of an audio, video, or text track
+ - Utils -- Various utilities
+
+###**Variablity**
+The project is divide by 3 modules (Core, Plugins, Skins).
+The core module is a rigid module and for change any feature there is a need an authorization of the TC Commitee, but there are the other modules (Plugins and Skin). These module are more easy to change and commit the changes.
+
 ###**Maintaining**
 ***Releasing version***
 
@@ -230,9 +224,10 @@ This file can includes:
  - Additional notes
 
 ##  Conclusions and Recommendations
-##  Bibliography
+##  Bibliography & References
 * https://github.com/videojs/video.js
 * http://html5video.org/wiki/Video_for_Everybody_HTML5_Video_Player
+* http://blog.videojs.com/
 
 ## Tools 
 * [PlantUml UML Generator](http://plantuml.com/)
