@@ -213,8 +213,8 @@ Plugin examples - subtitles, recording,playlist playing etc.
 ###**Maintaining**
 ***Releasing version***
 
-The video.js release process is outlined below. Only core contributors to video.js can create a new release but we do them very regularly. 
-[*Contributing guide*](https://github.com/videojs/video.js/wiki/CONTRIBUTING.md)
+The video.js release process is outlined below. Only core contributors to video.js can create a new release but it is done regularly. 
+[*Contributing guide*](https://github.com/videojs/video.js/blob/master/CONTRIBUTING.md)
 
 ***Change log file***
 
