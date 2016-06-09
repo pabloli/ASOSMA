@@ -192,8 +192,8 @@ The bigger part of this project is the UI part.
 
 ![EventTrigger and inherited Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/EventTriggerClass.svg)
 
-###**Metric Code**
-The Javascript library (video.js) section is divided in 7 principal sections:
+###**-------???? **
+The Javascript core library in video.js  is divided in seven principal sections:
  - Control-Bar -- All the types of controls (i.e. Audio, Progress, Volume)
  - Menu -- All the menu components (i.e Buttons, Items)
  - Popup -- The Popup component is used to build pop up controls
