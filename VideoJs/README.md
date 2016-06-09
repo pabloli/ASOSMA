@@ -204,7 +204,11 @@ The Javascript library (video.js) section is divided in 7 principal sections:
 
 ###**Variablity**
 The project is divide by 3 modules (Core, Plugins, Skins).
-The core module is a rigid module and for change any feature there is a need an authorization of the TC Commitee, but there are the other modules (Plugins and Skin). These module are more easy to change and commit the changes.
+***The core library*** handles the actual video player capabilities, reading video from many type of sources , and displaying it on HTML5 enviroment.
+The core module is a rigid module, any change or feature addition to the core requires an authorization of the TC Committee. 
+***Plugin and skins*** ,  are ment to allow specific customization, for many users. this feature makes Video.JS accessible.
+Plugin examples - subtitles, recording,playlist playing etc.
+ These module are more easy to change and commit the changes.
 
 ###**Maintaining**
 ***Releasing version***
