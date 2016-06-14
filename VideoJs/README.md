@@ -5,8 +5,8 @@
 <!-- -->
 
 ![Video.js logo](http://videojs.com/img/logo.png)
-# [Video.js - HTML5 Video Player](http://videojs.com)
-
+###[Video.js - HTML5 Video Player WebSite](http://videojs.com)
+###[Video.js - Github Repo](https://github.com/videojs/video.js)
 <!-- -->
 
 **[Harel](https://github.com/harella1), [Nati](https://github.com/natiohayun), [Meir](https://github.com/mwindowshz), and [Pablo](https://github.com/pabloli)**<br/>
@@ -46,20 +46,38 @@ The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and ea
  - [x] Forced fallback to Flash (*even when there is an unsupported source*)
 
 ##**Stakeholder Analysis**
+This is a software library and that the reason that the all stackholders are HTML developers. They develop this library (fixes bugs, add features) and also use the library for their own bussines.  
+<!-- -->
 ###***Users***
-
-***Funny Or Die***
-![FunnyOrDie](https://yt3.ggpht.com/-hBhdcAb62Uo/AAAAAAAAAAI/AAAAAAAAAAA/NUpkCfVpTIU/s100-c-k-no-rj-c0xffffff/photo.jpg)
-
-***The Guardian***
-![](https://assets.guim.co.uk/images/favicons/451963ac2e23633472bf48e2856d3f04/152x152.png)
-
-***Onion Studios***
-![](http://assets3.onionstatic.com/onionstatic/onionstudios/static/core/images/os_logo.png)
- 
-  ***Zencoder*** - Also is the creator of Video.js
+<!-- -->
+***Zencoder*** - Also is the most active developer of Video.js
+<!-- -->
+Zencoder is a cloud-based video and audio encoding product suite from Brightcove, a leading global provider of cloud content services. The Zencoder service provides customers reliable encoding of live and on-demand video. 
+<!-- -->
 ![](https://a.zencdn.net/assets/logo-print-c8eb6ccdba8286b7c36e567b2527f3bc.png)
-
+<!-- -->
+<!-- -->
+***Funny Or Die***
+<!-- -->
+Funny Or Die is a comedy video website founded in 2007 that combines user-generated content withoriginal, exclusive content.
+<!-- -->
+![FunnyOrDie](https://yt3.ggpht.com/-hBhdcAb62Uo/AAAAAAAAAAI/AAAAAAAAAAA/NUpkCfVpTIU/s100-c-k-no-rj-c0xffffff/photo.jpg)
+<!-- -->
+[Funny Or Die -- Zenconder case study](https://files.brightcove.com/zc-funny-or-die-cs.pdf)
+<!-- -->
+<!-- -->
+***The Guardian***
+<!-- -->
+The Guardian is a British national daily newspaper. Their media feeds are played using the Video.JS library (with Flash compatibility)
+![](https://assets.guim.co.uk/images/favicons/451963ac2e23633472bf48e2856d3f04/152x152.png)
+<!-- -->
+<!-- -->
+***Onion Studios***
+<!-- -->
+Onion Studios is a dynamic digital video network.
+![](http://assets3.onionstatic.com/onionstatic/onionstudios/static/core/images/os_logo.png)
+ <!-- -->
+<!-- -->
 ## ***How to use Video.JS***
 
 ***Compatible Software***
@@ -128,7 +146,7 @@ videojs.autoSetup();
 	![Most active contributors](MostCommiters.png)
  - ***StackOverFlow Forum***
  This forum is used for questions. All watchers will get emails for closed question responses.
- 
+ http://stackoverflow.com/questions/tagged/video.js
 
  - ***Video.Js Blog***
 This [blog](http://blog.videojs.com/) (managed by [Steve Heffernan](https://github.com/heff)) publishes the latest news about the projects, like anounces for a new version.
@@ -185,6 +203,11 @@ The bigger part of this project is the UI part.
 ***Entire Project Diagram*** -- Made with WAVI
 ![Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/vj.svg)
 
+<!-- -->
+##*Inheritage classes*
+<!-- -->
+On the next two diagrams can see that there are twon main classes, the first is *Component* class and all the feature classes directly or indirectly implement it. The second is the *Event Trigger* as the previous class all the event handlers implements this class.
+<!-- -->
 ***Component Class*** -- Made with PlantUML
 
 ![Component and inherited Classes Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/ComponentClass.svg)
@@ -225,9 +248,12 @@ This file can includes:
 
 ##  Conclusions and Recommendations
 ##  Bibliography & References
-* https://github.com/videojs/video.js
+* http://github.com/videojs/video.js
 * http://html5video.org/wiki/Video_for_Everybody_HTML5_Video_Player
 * http://blog.videojs.com/
+* http://www.zencoder.com/
+* http://www.wikipedia.org/
+* http://stackoverflow.com/questions/tagged/video.js
 
 ## Tools 
 * [PlantUml UML Generator](http://plantuml.com/)
