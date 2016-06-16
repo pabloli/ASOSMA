@@ -1,4 +1,4 @@
-
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 <!-- -->
 <!-- -->
 <!-- -->
@@ -69,6 +69,7 @@ Funny Or Die is a comedy video website founded in 2007 that combines user-genera
 ***The Guardian***
 <!-- -->
 The Guardian is a British national daily newspaper. Their media feeds are played using the Video.JS library (with Flash compatibility)
+<!-- -->
 ![](https://assets.guim.co.uk/images/favicons/451963ac2e23633472bf48e2856d3f04/152x152.png)
 <!-- -->
 <!-- -->
@@ -247,6 +248,16 @@ This file can includes:
  - Additional notes
 
 ##  Conclusions and Recommendations
+* Code comments and design documents missing
+* May be there is a violation of copyright violation (Right-Clicking let option to download the video)
+* Live streaming feature is missing
+* Resolution selection is missing -- can be a good feature for slowly conections
+
+## Security Issues
+* Copyright issues
+* No documentation about HTTPS transmition
+ 
+
 ##  Bibliography & References
 * http://github.com/videojs/video.js
 * http://html5video.org/wiki/Video_for_Everybody_HTML5_Video_Player
