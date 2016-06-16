@@ -1,18 +1,29 @@
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 <!-- -->
 <!-- -->
 <!-- -->
 <!-- -->
 
 ![Video.js logo](http://videojs.com/img/logo.png)
-###[Video.js - HTML5 Video Player WebSite](http://videojs.com)
-###[Video.js - Github Repo](https://github.com/videojs/video.js)
+##[Video.js - HTML5 Video Player WebSite](http://videojs.com)
+##[Video.js - Github Repo](https://github.com/videojs/video.js)
 <!-- -->
 
 **[Harel](https://github.com/harella1), [Nati](https://github.com/natiohayun), [Meir](https://github.com/mwindowshz), and [Pablo](https://github.com/pabloli)**<br/>
 [Our Video.Js documentation repository](https://github.com/pabloli/video.js/tree/master/docs)
 
 *Azriely Engeniring collage Jerusalem*
+
+**Table of Contents**  *generated with [DocToc]
+- [Introduction](#introduction)
+- [Stakeholder Analysis](#stakeholder-analysis)
+- [Community](#community)
+- [Developer's Perspective](#developers-perspective)
+- [Module Organization](#module-organization)
+		- [Class Diagrams](#class-diagrams)
+- [Conclusions and Recommendations](#conclusions-and-recommendations)
+- [Security Issues](#security-issues)
+- [Bibliography & References](#bibliography-&-references)
+- [Tools](#tools)
 
 [![Join the chat at https://gitter.im/pabloli/ASOSMA](https://badges.gitter.im/pabloli/ASOSMA.svg)](https://gitter.im/pabloli/ASOSMA?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -21,8 +32,6 @@
 Is an open source video player.
 Is active for 5 year.
 Is a active project.
-
-**Table of Contents**
 
 * [VIDEO.JS - HTML5 Video Player]()
 
@@ -45,10 +54,10 @@ The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and ea
  - [x] Volume Control
  - [x] Forced fallback to Flash (*even when there is an unsupported source*)
 
-##**Stakeholder Analysis**
+##	Stakeholder Analysis
 This is a software library and that the reason that the all stackholders are HTML developers. They develop this library (fixes bugs, add features) and also use the library for their own bussines.  
 <!-- -->
-###***Users***
+###	***Users***
 <!-- -->
 ***Zencoder*** - Also is the most active developer of Video.js
 <!-- -->
@@ -79,7 +88,7 @@ Onion Studios is a dynamic digital video network.
 ![](http://assets3.onionstatic.com/onionstatic/onionstudios/static/core/images/os_logo.png)
  <!-- -->
 <!-- -->
-## ***How to use Video.JS***
+##	How to use Video.JS
 
 ***Compatible Software***
 
@@ -137,7 +146,7 @@ videojs.autoSetup();
       window.onresize = resizeVideoJS; 
     });
 ```
-##**Community**
+##	**Community**
  - ***GitHub Repository***
 
 	*Repository life activity*
@@ -157,7 +166,7 @@ This [blog](http://blog.videojs.com/) (managed by [Steve Heffernan](https://gith
 
 
 
-##**Developer's Perspective**
+##	Developer's Perspective
 ###***Developer Types***
 ***TC Commitee***
 
@@ -194,7 +203,7 @@ _The checklist_:
 
    [New Feature checklist](https://github.com/videojs/video.js/wiki/New-Feature-Checklist) 
    
-##***Module Organization***
+##	Module Organization
 ###**Development Process**
 There is no too much information about the process but from the github record we can learn that the project start with only one developer and now the project is been developed by a lot of active developers.
 The bigger part of this project is the UI part.
@@ -205,7 +214,7 @@ The bigger part of this project is the UI part.
 ![Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/vj.svg)
 
 <!-- -->
-##*Inheritage classes*
+###	*Inheritage classes*
 <!-- -->
 On the next two diagrams can see that there are twon main classes, the first is *Component* class and all the feature classes directly or indirectly implement it. The second is the *Event Trigger* as the previous class all the event handlers implements this class.
 <!-- -->
@@ -226,11 +235,20 @@ The Javascript library (video.js) section is divided in 7 principal sections:
  - Tracks -- Setup the common parts of an audio, video, or text track
  - Utils -- Various utilities
 
-###**Variablity**
-The project is divide by 3 modules (Core, Plugins, Skins).
+###	**Variablity**
+The project is divided in 3 modules (Core, Plugins, Skins).
 The core module is a rigid module and for change any feature there is a need an authorization of the TC Commitee, but there are the other modules (Plugins and Skin). These module are more easy to change and commit the changes.
 
-###**Maintaining**
+####	***Extensibility***
+The project was design for a easy extesibility, each developer can add a feature as skins or ability without change all the project.
+Type of extensions:
+
+ - [Skins](http://docs.videojs.com/docs/guides/skins.html) - *just by overiding Video.JS base theme*
+ - [Languages](http://docs.videojs.com/docs/guides/languages.html) - *adding a simple jason file with a dictionary file*
+ - [Plugins](http://docs.videojs.com/docs/guides/plugins.html) - *any functionality writeen could be registered as Video.JS plugin , also can be used a plugin generator tool (this tool includes Build , Installation System and Testing support)*
+ - 
+
+###	**Maintaining**
 ***Releasing version***
 
 The video.js release process is outlined below. Only core contributors to video.js can create a new release but we do them very regularly. 
@@ -247,18 +265,18 @@ This file can includes:
  - API changes
  - Additional notes
 
-##  Conclusions and Recommendations
+##	Conclusions and Recommendations
 * Code comments and design documents missing
 * May be there is a violation of copyright violation (Right-Clicking let option to download the video)
 * Live streaming feature is missing
 * Resolution selection is missing -- can be a good feature for slowly conections
 
-## Security Issues
+##	Security Issues
 * Copyright issues
 * No documentation about HTTPS transmition
  
 
-##  Bibliography & References
+##	Bibliography & References
 * http://github.com/videojs/video.js
 * http://html5video.org/wiki/Video_for_Everybody_HTML5_Video_Player
 * http://blog.videojs.com/
@@ -266,7 +284,7 @@ This file can includes:
 * http://www.wikipedia.org/
 * http://stackoverflow.com/questions/tagged/video.js
 
-## Tools 
+##	Tools 
 * [PlantUml UML Generator](http://plantuml.com/)
 * [RawGit serves raw files directly from GitHub](http://rawgit.com/)
 * [WAVI -- Generate a class diagram for your node.js web application](https://github.com/bakunin95/wavi)
