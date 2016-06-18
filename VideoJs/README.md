@@ -18,18 +18,21 @@
 
 **Abstract**
 
-Is an open source video player.
-Is active for 5 year.
-Is a active project.
+Is an open source video player. Active for 5 years. 
+
+The project is interesting because it is open source library that allows to stream video to almost any device regardless of device or browser capabilities. This library solves a long-standing problem of Streaming of video and is unique in the market today.
+
+
 
 **Table of Contents**
+<del> ***missing table***
 
-* [VIDEO.JS - HTML5 Video Player]()
+<del>--- Need to write what this link is and place it , in the right location ---> [VIDEO.JS - HTML5 Video Player]()
 
 ##	Introduction
 Video.js is a web video player built from the ground up for an HTML5 world. It supports HTML5 and Flash video, as well as YouTube and Vimeo (through plugins). It supports video playback on desktops and mobile devices. This project was started mid 2010, and the player is now used on over 200,000 websites
 
-Video.JS is compatible with may Browsers and Devices, thus makes it available on many platforms  (including ones without java script).  This is achieved through  the  use of embedded code.
+Video.JS is compatible with many Browsers and Devices, thus makes it available on many platforms  (including ones without java script).  This is achieved through  the  use of embedded code.
 The java script library fixes browser & device bugs, and makes sure your video is even more compatible across different browser versions.
 The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and easy custom skinning if you want to give it a specific look, or brand it with your own colors. 
 
@@ -47,6 +50,7 @@ The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and ea
 
 ##**Stakeholder Analysis**
 ###***Users***
+<del> missing some more information on stackholders
 
 ***Funny Or Die***
 ![FunnyOrDie](https://yt3.ggpht.com/-hBhdcAb62Uo/AAAAAAAAAAI/AAAAAAAAAAA/NUpkCfVpTIU/s100-c-k-no-rj-c0xffffff/photo.jpg)
@@ -155,17 +159,12 @@ The TSC has final authority over this project including:
 ***Collaborators***
 
 Modifications of the contents of the videojs/video.js repository are made on a collaborative basis. Anybody with a GitHub account may propose a modification via pull request and it will be considered by the project Collaborators. All pull requests must be reviewed and accepted by a Collaborator with sufficient expertise who is able to take full responsibility for the change
-	
-***Developing Modules***
-
-- Core
-- Skin
-- Plugins
 
 ***New features and tests***
 
-There are not a tester groups, each developer with each commit **must** test the entire project and update the *TC Commitee* with the results. If there are any additional documentation will be better.
+There are not a tester groups, each developer with each commit **must** test the entire project and update the *TC Commitee* with the results. If developer adds additional documentation it would be welcome.
 
+Before commiting new updates the developer is instructed to this guideline:
 _The checklist_:
 - [ ] Tests written  
 - [ ] Feature implemented  
@@ -174,42 +173,11 @@ _The checklist_:
 - [ ] Pull request submitted
 
    [New Feature checklist](https://github.com/videojs/video.js/wiki/New-Feature-Checklist) 
-   
-##***Module Organization***
-###**Development Process**
+  	
+  	###**Project Development Process**
 There is no too much information about the process but from the github record we can learn that the project start with only one developer and now the project is been developed by a lot of active developers.
 The bigger part of this project is the UI part.
-
-
-####  ***Class Diagrams***
-***Entire Project Diagram*** -- Made with WAVI
-![Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/vj.svg)
-
-***Component Class*** -- Made with PlantUML
-
-![Component and inherited Classes Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/ComponentClass.svg)
-***EventTrigger Class*** -- Made with PlantUML
-
-![EventTrigger and inherited Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/EventTriggerClass.svg)
-
-###**-------???? **
-The Javascript core library in video.js  is divided in seven principal sections:
- - Control-Bar -- All the types of controls (i.e. Audio, Progress, Volume)
- - Menu -- All the menu components (i.e Buttons, Items)
- - Popup -- The Popup component is used to build pop up controls
- - Slider -- The base functionality for sliders like the volume bar and seek bar
- - Tech -- Module for media (HTML5 Video, Flash) controllers
- - Tracks -- Setup the common parts of an audio, video, or text track
- - Utils -- Various utilities
-
-###**Variablity**
-The project is divide by 3 modules (Core, Plugins, Skins).
-***The core library*** handles the actual video player capabilities, reading video from many type of sources , and displaying it on HTML5 enviroment.
-The core module is a rigid module, any change or feature addition to the core requires an authorization of the TC Committee. 
-***Plugin and skins*** ,  are ment to allow specific customization, for many users. this feature makes Video.JS accessible.
-Plugin examples - subtitles, recording,playlist playing etc.
- These module are more easy to change and commit the changes.
-
+*
 ###**Maintaining**
 ***Releasing version***
 
@@ -226,6 +194,41 @@ This file can includes:
  - Architecture changes
  - API changes
  - Additional notes
+
+
+ ###**Variablity**
+The project is divide by 3 modules (Core, Plugins, Skins).
+***The core library*** handles the actual video player capabilities, reading video from many type of sources , and displaying it on HTML5 enviroment.
+The core module is a rigid module, any change or feature addition to the core requires an authorization of the TC Committee. 
+***Plugin and skins*** ,  are ment to allow specific customization, for many users. this feature makes Video.JS accessible.
+Plugin examples - subtitles, recording,playlist playing etc.
+ These module are more easy to change and commit the changes.
+
+###**Core library **
+The Javascript core library in video.js  is divided in seven principal sections:
+ - Control-Bar -- All the types of controls (i.e. Audio, Progress, Volume)
+ - Menu -- All the menu components (i.e Buttons, Items)
+ - Popup -- The Popup component is used to build pop up controls
+ - Slider -- The base functionality for sliders like the volume bar and seek bar
+ - Tech -- Module for media (HTML5 Video, Flash) controllers
+ - Tracks -- Setup the common parts of an audio, video, or text track
+ - Utils -- Various utilities
+
+##***Module Organization***
+
+####  ***Class Diagrams***
+***Entire Project Diagram*** -- Made with WAVI
+![Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/vj.svg)
+
+***Component Class*** -- Made with PlantUML
+
+![Component and inherited Classes Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/ComponentClass.svg)
+***EventTrigger Class*** -- Made with PlantUML
+
+![EventTrigger and inherited Class Diagram](https://rawgit.com/pabloli/ASOSMA/master/VideoJs/EventTriggerClass.svg)
+
+
+
 
 ##  Conclusions and Recommendations
 ##  Bibliography & References
