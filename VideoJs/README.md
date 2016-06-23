@@ -63,6 +63,9 @@ Brightcove is the main sponsor of the project, employing many of the core member
 The Brightcove Player is built on video.js and used on thousands of video websites, ensuring video.js can handle the most professional use cases.
 ![enter image description here](http://videojs.com/img/brightcove.png)
 
+**CDN Sponsor**
+
+![enter image description here](http://videojs.com/img/fastly.png)
 ###	***Users***
 <!-- -->
 ***Zencoder*** - Also is the most active developer of Video.js
