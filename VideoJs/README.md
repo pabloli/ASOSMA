@@ -55,7 +55,7 @@ The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and ea
  - [x] Forced fallback to Flash (*even when there is an unsupported source*)
 
 ##	Stakeholder Analysis
-This is a software library and that the reason that the all stackholders are HTML developers. They develop this library (fixes bugs, add features) and also use the library for their own bussines.  
+This is a software library and that the reason that the all stackholders are developers. As a general rule in software libray there are 2 main types of developers, These users that develop this library (fixes bugs, add features) and also the developers that uses the library for their own bussines.  
 <!-- -->
 **Corporate Shepherd**
 Brightcove is the main sponsor of the project, employing many of the core members and investing thousands of engineering hours every year in video.js and video.js plugins.
