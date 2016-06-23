@@ -57,6 +57,12 @@ The pure HTML5/CSS skin ensures a consistent look between HTML5 browsers, and ea
 ##	Stakeholder Analysis
 This is a software library and that the reason that the all stackholders are HTML developers. They develop this library (fixes bugs, add features) and also use the library for their own bussines.  
 <!-- -->
+**Corporate Shepherd**
+Brightcove is the main sponsor of the project, employing many of the core members and investing thousands of engineering hours every year in video.js and video.js plugins.
+
+The Brightcove Player is built on video.js and used on thousands of video websites, ensuring video.js can handle the most professional use cases.
+![enter image description here](http://videojs.com/img/brightcove.png)
+
 ###	***Users***
 <!-- -->
 ***Zencoder*** - Also is the most active developer of Video.js
