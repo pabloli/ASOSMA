@@ -276,6 +276,10 @@ Type of extensions:
  - [Plugins](http://docs.videojs.com/docs/guides/plugins.html) - *any functionality writeen could be registered as Video.JS plugin , also can be used a plugin generator tool (this tool includes Build , Installation System and Testing support)*
  - 
 
+####	***Code Metrics***
+Submitting the Video.js library to CodeClimate online Analyzing engine produced a fine badge of 1.99GPA, which is their own scale of quality. Most of the issues found are in the large peaces of code (like player.js & component.js) and are focused around code complexity and duplication.
+(add some captures fron the site.....)
+[![Code Climate](https://codeclimate.com/github/harella1/video.js/badges/gpa.svg)](https://codeclimate.com/github/harella1/video.js)
 
 ##	Conclusions and Recommendations
 * Code comments and design documents missing
