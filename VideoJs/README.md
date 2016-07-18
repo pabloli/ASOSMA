@@ -309,6 +309,22 @@ Most of the issues found are in the large peaces of code (like player.js & compo
 * No documentation about HTTPS transmition
  
 
+**Reflections and summary**
+---------------------------
+
+While working on this project we learned a few points regarding project modeling.
+
+We learned that analyzing a project architecture and model, is possible without a knowledge about the subject of the project. This shows us that modeling is universal regardless of type of project, or language used.
+
+We learned that when examining a project, it is good to check and understand about the creator (a single person, a company etc.) and what was the need. Examination of the code, commit history, we can learn when and how the code and the project evolved. And this is before even reading one line of code. 
+For analyzing the code architecture and modeling we used Tools that created graphs and UML diagrams. This was a better way to start, and it was not relevant to start reading the code and trying to understand from it, a code that is in a language unknown for us, and a project structure unfamiliar. Although a deeper understanding of the code could have given us a better in site for the modeling perspective.
+
+We contacted the developer, and he was happy with our work. (*Pablo add here what he would use from our project*)
+
+Beside this project, we learned the value of GIT and GIT HUB as a tool of collaboration and joined development. 
+We also have a question about open source project – who are the Stakeholders the creator? The users?
+
+
 ##	Bibliography & References
 * http://github.com/videojs/video.js
 * http://html5video.org/wiki/Video_for_Everybody_HTML5_Video_Player
