@@ -319,7 +319,7 @@ We learned that analyzing a project architecture and model, is possible without 
 We learned that when examining a project, it is good to check and understand about the creator (a single person, a company etc.) and what was the need. Examination of the code, commit history, we can learn when and how the code and the project evolved. And this is before even reading one line of code. 
 For analyzing the code architecture and modeling we used Tools that created graphs and UML diagrams. This was a better way to start, and it was not relevant to start reading the code and trying to understand from it, a code that is in a language unknown for us, and a project structure unfamiliar. Although a deeper understanding of the code could have given us a better in site for the modeling perspective.
 
-We contacted the developer, and he was happy with our work. (*Pablo add here what he would use from our project*)
+We contacted the developer, and he was happy with our work. He said the most useful section will be The Module Organization section that we insert a few diagrams. He reconsider the pull request and close it without merging.  (https://github.com/videojs/video.js/pull/3383))
 
 Beside this project, we learned the value of GIT and GIT HUB as a tool of collaboration and joined development. 
 We also have a question about open source project – who are the Stakeholders the creator? The users?
