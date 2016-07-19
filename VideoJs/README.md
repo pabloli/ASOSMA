@@ -295,8 +295,8 @@ Most of the issues found are in the large peaces of code (like player.js & compo
 <!-- -->
 [![](Code.PNG)](https://codeclimate.com/github/harella1/video.js/src/js/player.js)
 <!-- -->
-[![Code Climate](https://codeclimate.com/github/harella1/video.js/badges/gpa.svg)](https://codeclimate.com/github/harella1/video.js)
-[![Issue Count](https://codeclimate.com/github/harella1/video.js/badges/issue_count.svg)](https://codeclimate.com/github/harella1/video.js)
+[![Code Climate](https://codeclimate.com/github/videojs/video.js/badges/gpa.svg)](https://codeclimate.com/github/videojs/video.js/)
+[![Issue Count](https://codeclimate.com/github/videojs/video.js/badges/issue_count.svg)](https://codeclimate.com/github/videojs/video.js/)
 
 ##	Conclusions and Recommendations
 * Code comments and design documents missing
